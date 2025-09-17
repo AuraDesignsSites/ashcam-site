@@ -23,16 +23,12 @@ const Header = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3">
+          <Link to="/" className="flex items-center">
             <img 
               src={ashcamLogo} 
               alt="AshCam Cutting Solutions" 
-              className="h-10 w-10"
+              className="h-16 w-16"
             />
-            <div className="hidden sm:block">
-              <span className="text-lg font-bold text-foreground">AshCam</span>
-              <span className="text-sm text-muted-foreground block leading-none">Cutting Solutions</span>
-            </div>
           </Link>
 
           {/* Desktop Navigation */}
