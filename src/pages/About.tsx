@@ -3,10 +3,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { Target, Users, Trophy, ArrowRight } from "lucide-react";
 import Layout from "@/components/Layout";
-
 const About = () => {
-  return (
-    <Layout>
+  return <Layout>
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-background to-surface-light">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -31,22 +29,13 @@ const About = () => {
             </div>
             
             <div className="prose prose-lg max-w-none text-muted-foreground">
-              <p>
-                AshCam Cutting Solutions Ltd. began as a specialized provider of high-quality saw blades 
-                and cutting tools for industrial applications. With years of experience in the industry, 
-                we understand the critical importance of precision, reliability, and performance in 
-                professional cutting operations.
-              </p>
-              <p>
+              <p className="text-center">At AshCam Cutting Solutions, we specialize in premium-quality cutting blades designed for power, precision, and durability. Whether you’re in construction, metalwork, or fabrication, our blades deliver smoother cuts, longer life, and unbeatable value. We source only the best materials and test every product to meet North American standards. If you’re looking for reliability that saves you both time and cost, our blades are the solution you need.</p>
+              <p className="text-center">
                 Our commitment to excellence has made us a trusted partner for businesses across various 
                 sectors, from woodworking and construction to manufacturing and engineering. We pride 
                 ourselves on delivering solutions that not only meet but exceed our customers' expectations.
               </p>
-              <p>
-                Today, we continue to expand our product range while maintaining the same dedication to 
-                quality that has defined our company from the beginning. Every product we offer is 
-                carefully selected and tested to ensure it meets our rigorous standards.
-              </p>
+              
             </div>
           </div>
         </div>
@@ -63,31 +52,25 @@ const About = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: Target,
-                title: "Precision",
-                description: "We deliver cutting tools engineered for exact specifications and consistent performance in demanding applications."
-              },
-              {
-                icon: Users,
-                title: "Customer Focus",
-                description: "Our customers' success is our priority. We provide expert guidance and support throughout your project lifecycle."
-              },
-              {
-                icon: Trophy,
-                title: "Excellence",
-                description: "We maintain the highest standards in product quality, service delivery, and professional expertise."
-              }
-            ].map((value, index) => (
-              <Card key={index} className="border border-border hover-lift">
+            {[{
+            icon: Target,
+            title: "Precision",
+            description: "We deliver cutting tools engineered for exact specifications and consistent performance in demanding applications."
+          }, {
+            icon: Users,
+            title: "Customer Focus",
+            description: "Our customers' success is our priority. We provide expert guidance and support throughout your project lifecycle."
+          }, {
+            icon: Trophy,
+            title: "Excellence",
+            description: "We maintain the highest standards in product quality, service delivery, and professional expertise."
+          }].map((value, index) => <Card key={index} className="border border-border hover-lift">
                 <CardContent className="p-8 text-center space-y-4">
                   <value.icon className="h-12 w-12 text-primary mx-auto" />
                   <h3 className="text-xl font-semibold">{value.title}</h3>
                   <p className="text-muted-foreground">{value.description}</p>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -126,8 +109,6 @@ const About = () => {
           </div>
         </div>
       </section>
-    </Layout>
-  );
+    </Layout>;
 };
-
 export default About;
