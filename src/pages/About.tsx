@@ -17,25 +17,27 @@ const About = () => {
         </div>
       </section>
 
-      {/* Company Story */}
+      {/* About AshCam Cutting Solutions */}
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto space-y-12">
-            <div className="text-center space-y-4">
-              <h2 className="text-3xl font-bold">Our Story</h2>
-              <p className="text-lg text-muted-foreground">
-                Founded with a vision to provide the industry's finest cutting tools
-              </p>
-            </div>
-            
-            <div className="prose prose-lg max-w-none text-muted-foreground">
-              <p className="text-center">At AshCam Cutting Solutions, we specialize in premium-quality cutting blades designed for power, precision, and durability. Whether you’re in construction, metalwork, or fabrication, our blades deliver smoother cuts, longer life, and unbeatable value. We source only the best materials and test every product to meet North American standards. If you’re looking for reliability that saves you both time and cost, our blades are the solution you need.</p>
-              <p className="text-center">
-                Our commitment to excellence has made us a trusted partner for businesses across various 
-                sectors, from woodworking and construction to manufacturing and engineering. We pride 
-                ourselves on delivering solutions that not only meet but exceed our customers' expectations.
-              </p>
+          <div className="max-w-5xl mx-auto">
+            <div className="bg-primary/5 border border-primary/20 rounded-2xl p-8 md:p-12">
+              <div className="text-center space-y-6 mb-8">
+                <h2 className="text-4xl font-bold text-primary">About AshCam Cutting Solutions</h2>
+                <div className="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+              </div>
               
+              <div className="prose prose-lg max-w-none text-center space-y-6">
+                <p className="text-lg leading-relaxed text-foreground">
+                  AshCam Cutting Solutions Limited is a trusted supplier of premium-quality cutting blades and tools designed for professionals in construction, woodworking, metalworking, and beyond. We focus on delivering durable, high-performance products that meet the demands of both small contractors and large-scale operations.
+                </p>
+                <p className="text-lg leading-relaxed text-foreground">
+                  With precision, reliability, and value at the core of our business, AshCam ensures every cut is clean, efficient, and built to last. Our commitment to excellence has made us a trusted partner for businesses across various sectors, from woodworking and construction to manufacturing and engineering.
+                </p>
+                <p className="text-lg leading-relaxed text-foreground">
+                  We pride ourselves on delivering solutions that not only meet but exceed our customers' expectations, sourcing only the best materials and testing every product to meet North American standards.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -81,9 +83,10 @@ const About = () => {
           <div className="max-w-4xl mx-auto text-center space-y-8">
             <h2 className="text-3xl font-bold">Our Mission</h2>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              To be the leading provider of precision cutting solutions, empowering our customers 
-              with the highest quality tools and expert support needed to achieve exceptional 
-              results in their projects and operations.
+              To bring high-quality cutting solutions to Canadians at affordable prices while maintaining 
+              unwavering reliability. We believe that professional-grade cutting tools should be accessible 
+              to every contractor, craftsman, and business owner across Canada, without compromising on 
+              quality or performance.
             </p>
             <Button asChild variant="hero" size="lg" className="group">
               <Link to="/products">
