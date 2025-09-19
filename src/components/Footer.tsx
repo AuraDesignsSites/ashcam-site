@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin, Facebook, Linkedin, Twitter } from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
 import ashcamLogo from "@/assets/ashcam-logo.png";
 
 const Footer = () => {
@@ -20,14 +20,8 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-muted-foreground mb-6 max-w-md">
-              Leading provider of professional industrial cutting tools and saw blades. 
-              Quality, precision, and reliability you can trust.
+              Precision Blades. Lasting Cuts.
             </p>
-            <div className="flex space-x-4">
-              <Facebook className="h-5 w-5 text-muted-foreground hover:text-primary transition-smooth cursor-pointer" />
-              <Linkedin className="h-5 w-5 text-muted-foreground hover:text-primary transition-smooth cursor-pointer" />
-              <Twitter className="h-5 w-5 text-muted-foreground hover:text-primary transition-smooth cursor-pointer" />
-            </div>
           </div>
 
           {/* Quick Links */}
@@ -59,18 +53,17 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Phone className="h-4 w-4 text-primary" />
-                <span className="text-muted-foreground">+44 123 456 7890</span>
+                <span className="text-muted-foreground">+1 647-519-2734</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-primary" />
-                <span className="text-muted-foreground">info@ashcamcutting.co.uk</span>
+                <span className="text-muted-foreground">AshCam1964@yahoo.com</span>
               </div>
               <div className="flex items-start space-x-3">
                 <MapPin className="h-4 w-4 text-primary mt-1" />
                 <span className="text-muted-foreground">
-                  123 Industrial Estate<br />
-                  Manchester, M1 2AB<br />
-                  United Kingdom
+                  385 Osler Street, Unit 510<br />
+                  Toronto, ON, M6N 0B2
                 </span>
               </div>
             </div>
@@ -79,7 +72,7 @@ const Footer = () => {
 
         <div className="border-t border-surface-medium mt-8 pt-8 text-center">
           <p className="text-muted-foreground">
-            © 2024 AshCam Cutting Solutions Ltd. All rights reserved.
+            © 2025 AshCam Cutting Solutions Ltd. All rights reserved.
           </p>
         </div>
       </div>

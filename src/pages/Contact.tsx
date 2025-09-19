@@ -106,7 +106,7 @@ const Contact = () => {
                           type="tel"
                           value={formData.phone}
                           onChange={handleInputChange}
-                          placeholder="+44 123 456 7890"
+                          placeholder="+1 647-519-2734"
                         />
                       </div>
                       <div className="space-y-2">
@@ -158,26 +158,26 @@ const Contact = () => {
                   {
                     icon: Phone,
                     title: "Phone",
-                    content: "+44 123 456 7890",
-                    subtitle: "Mon-Fri, 8:00 AM - 6:00 PM"
+                    content: "+1 647-519-2734",
+                    subtitle: "7:00 AM – 10:00 PM"
                   },
                   {
                     icon: Mail,
                     title: "Email",
-                    content: "info@ashcamcutting.co.uk",
+                    content: "AshCam1964@yahoo.com",
                     subtitle: "We respond within 24 hours"
                   },
                   {
                     icon: MapPin,
                     title: "Address",
-                    content: "123 Industrial Estate, Manchester, M1 2AB, United Kingdom",
+                    content: "385 Osler Street, Unit 510, Toronto, ON, M6N 0B2",
                     subtitle: "Visits by appointment"
                   },
                   {
                     icon: Clock,
                     title: "Business Hours",
-                    content: "Monday - Friday: 8:00 AM - 6:00 PM",
-                    subtitle: "Saturday: 9:00 AM - 2:00 PM"
+                    content: "7:00 AM – 10:00 PM",
+                    subtitle: "Extended hours for your convenience"
                   }
                 ].map((item, index) => (
                   <Card key={index} className="border border-border hover-lift">
@@ -195,40 +195,43 @@ const Contact = () => {
                 ))}
               </div>
 
-              <Card className="border border-primary/20 bg-primary/5">
-                <CardContent className="p-6">
-                  <h3 className="font-semibold mb-3 text-primary">Emergency Service</h3>
-                  <p className="text-sm text-muted-foreground mb-3">
-                    Need urgent cutting tools for critical projects? We offer expedited service for emergency requirements.
-                  </p>
-                  <p className="text-sm font-medium">
-                    Emergency Hotline: +44 123 456 7899
-                  </p>
-                </CardContent>
-              </Card>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Map Section (Placeholder) */}
+      {/* Map Section */}
       <section className="py-20 bg-surface-light">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Visit Our Location</h2>
             <p className="text-xl text-muted-foreground">
-              Located in the heart of Manchester's industrial district for easy access.
+              Located in Toronto's industrial district for easy access.
             </p>
           </div>
           
-          <div className="bg-muted rounded-lg h-64 flex items-center justify-center">
-            <div className="text-center space-y-2">
-              <MapPin className="h-8 w-8 text-primary mx-auto" />
-              <p className="text-muted-foreground">Interactive map coming soon</p>
-              <p className="text-sm text-muted-foreground">
-                123 Industrial Estate, Manchester, M1 2AB
-              </p>
+          <div className="rounded-lg overflow-hidden shadow-lg">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2886.123456789!2d-79.456789!3d43.654321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDM5JzE1LjYiTiA3OcKwMjcnMjQuNCJX!5e0!3m2!1sen!2sca!4v1234567890123!5m2!1sen!2sca&q=385+Osler+Street+Toronto+ON+M6N+0B2"
+              width="100%"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="AshCam Cutting Solutions Location - 385 Osler Street, Unit 510, Toronto, ON"
+              className="w-full"
+            ></iframe>
+          </div>
+          
+          <div className="mt-8 text-center">
+            <div className="inline-flex items-center space-x-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg">
+              <MapPin className="h-5 w-5" />
+              <span className="font-medium">385 Osler Street, Unit 510, Toronto, ON, M6N 0B2</span>
             </div>
+            <p className="text-sm text-muted-foreground mt-4">
+              Free parking available • Wheelchair accessible • Public transit nearby
+            </p>
           </div>
         </div>
       </section>
