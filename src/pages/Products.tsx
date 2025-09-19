@@ -9,62 +9,33 @@ import sawBlades from "@/assets/saw-blades-collection.jpg";
 const Products = () => {
   const products = [
     {
-      name: "Circular Saw Blades",
-      category: "Wood Cutting",
-      description: "High-performance circular saw blades for precision woodworking applications.",
-      sizes: ["184mm", "190mm", "216mm", "250mm", "300mm"],
-      features: ["Carbide Tips", "Anti-Vibration", "Precision Ground"],
-      price: "From £25"
+      name: "Diamond Blade Cutting Disc",
+      category: "Masonry & Concrete",
+      description: "High-performance 6½ inch blade engineered for concrete, stone, and masonry cutting. Designed for durability and precision in compact cutting applications.",
+      size: "6½ inches",
+      features: ["Diamond Segments", "Wet/Dry Use", "Precision Cutting"],
+      price: "$35"
     },
     {
-      name: "Metal Cutting Blades",
-      category: "Metal Working",
-      description: "Specialized blades designed for cutting various metals with clean, precise cuts.",
-      sizes: ["180mm", "200mm", "230mm", "255mm", "305mm"],
-      features: ["HSS Construction", "Heat Resistant", "Long Lasting"],
-      price: "From £35"
+      name: "Diamond Blade Cutting Disc",
+      category: "Masonry & Concrete", 
+      description: "High-performance 7¼ inch blade engineered for concrete, stone, and masonry cutting. Designed for durability and precision in medium-duty cutting applications.",
+      size: "7¼ inches",
+      features: ["Diamond Segments", "Wet/Dry Use", "Precision Cutting"],
+      price: "$40"
     },
     {
-      name: "Diamond Blades",
-      category: "Masonry",
-      description: "Professional diamond blades for cutting concrete, stone, and masonry materials.",
-      sizes: ["115mm", "125mm", "180mm", "230mm", "350mm"],
-      features: ["Diamond Segments", "Wet/Dry Use", "Superior Life"],
-      price: "From £45"
-    },
-    {
-      name: "Multi-Purpose Blades",
-      category: "Universal",
-      description: "Versatile blades suitable for cutting multiple materials in various applications.",
-      sizes: ["165mm", "184mm", "190mm", "216mm", "250mm"],
-      features: ["Multi-Material", "Flexible Use", "Cost Effective"],
-      price: "From £30"
-    },
-    {
-      name: "Fine Finish Blades",
-      category: "Precision",
-      description: "Ultra-fine tooth blades for smooth, splinter-free cuts in delicate materials.",
-      sizes: ["160mm", "184mm", "216mm", "250mm", "300mm"],
-      features: ["Fine Teeth", "Smooth Cut", "Minimal Waste"],
-      price: "From £40"
-    },
-    {
-      name: "Heavy Duty Blades",
-      category: "Industrial",
-      description: "Robust blades engineered for demanding industrial cutting applications.",
-      sizes: ["250mm", "300mm", "350mm", "400mm", "450mm"],
-      features: ["Reinforced Core", "High Durability", "Professional Grade"],
-      price: "From £60"
+      name: "Diamond Blade Cutting Disc",
+      category: "Masonry & Concrete",
+      description: "High-performance 14 inch blade engineered for concrete, stone, and masonry cutting. Designed for durability and precision in heavy-duty cutting applications.",
+      size: "14 inches",
+      features: ["Diamond Segments", "Wet/Dry Use", "Precision Cutting"],
+      price: "$85"
     }
   ];
 
   const categoryColors: Record<string, string> = {
-    "Wood Cutting": "bg-amber-100 text-amber-800",
-    "Metal Working": "bg-slate-100 text-slate-800",
-    "Masonry": "bg-orange-100 text-orange-800",
-    "Universal": "bg-green-100 text-green-800",
-    "Precision": "bg-blue-100 text-blue-800",
-    "Industrial": "bg-red-100 text-red-800"
+    "Masonry & Concrete": "bg-orange-100 text-orange-800"
   };
 
   return (
@@ -121,14 +92,10 @@ const Products = () => {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div>
-                    <h4 className="font-medium mb-2">Available Sizes:</h4>
-                    <div className="flex flex-wrap gap-1">
-                      {product.sizes.map((size, i) => (
-                        <Badge key={i} variant="outline" className="text-xs">
-                          {size}
-                        </Badge>
-                      ))}
-                    </div>
+                    <h4 className="font-medium mb-2">Size:</h4>
+                    <Badge variant="outline" className="text-sm">
+                      {product.size}
+                    </Badge>
                   </div>
                   
                   <div>
