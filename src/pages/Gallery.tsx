@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, X } from "lucide-react";
 import Layout from "@/components/Layout";
+import LazyImage from "@/components/LazyImage";
 import { useState } from "react";
 import sixAndHalfBlade from "@/assets/diamond-blade-6.5-inch.png";
 import sevenAndQuarterBlade from "@/assets/diamond-blade-7.25-inch.png";
@@ -82,10 +83,11 @@ const Gallery = () => {
                   setImageLoaded(false);
                 }}
               >
-                <img 
+                <LazyImage 
                   src={product.image} 
                   alt={product.title}
-                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-64 group-hover:scale-105 transition-transform duration-300"
+                  placeholder="Loading image..."
                 />
               </div>
             ))}

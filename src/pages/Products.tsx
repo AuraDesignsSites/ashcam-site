@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle, RotateCcw } from "lucide-react";
 import Layout from "@/components/Layout";
+import LazyImage from "@/components/LazyImage";
 import { Seo } from "@/lib/seo";
 import { useState } from "react";
 import sawBlades from "@/assets/diamond-blade-collection.png";
@@ -128,10 +129,11 @@ const Products = () => {
               </Button>
             </div>
             <div className="relative">
-              <img 
+              <LazyImage 
                 src={sawBlades} 
                 alt="Professional saw blades collection — Vaughan masonry work" 
                 className="w-full rounded-lg shadow-lg"
+                placeholder="Loading product collection..."
               />
             </div>
           </div>
@@ -220,10 +222,11 @@ const Products = () => {
                         <Card className="border border-border h-full flex flex-col">
                           <div className="relative w-full h-full bg-background rounded-lg overflow-hidden p-6 flex flex-col">
                             <div className="flex-1 flex items-center justify-center">
-                              <img 
+                              <LazyImage 
                                 src={product.image} 
                                 alt={`${product.name} - ${product.size}`}
-                                className="max-w-full max-h-full object-contain"
+                                className="max-w-full max-h-full"
+                                placeholder="Loading product image..."
                               />
                             </div>
                             <div className="absolute top-4 right-4">
