@@ -112,8 +112,8 @@ const Products = () => {
                   
                   <div className="flex justify-between items-center pt-4 border-t">
                     <span className="font-semibold text-primary">{product.price}</span>
-                    <Button variant="outline" size="sm" className="group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                      Get Quote
+                    <Button asChild variant="outline" size="sm" className="group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                      <Link to="/contact">Get Quote</Link>
                     </Button>
                   </div>
                 </CardContent>

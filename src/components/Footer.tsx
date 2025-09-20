@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin } from "lucide-react";
-import ashcamLogo from "@/assets/ashcam-logo.png";
+import ashcamLogo from "@/assets/Logov2.png";
 
 const Footer = () => {
   return (
@@ -13,7 +13,7 @@ const Footer = () => {
               <img 
                 src={ashcamLogo} 
                 alt="AshCam Cutting Solutions" 
-                className="h-10 w-10"
+                className="h-16 w-auto object-contain"
               />
               <div>
                 <span className="text-lg font-bold">AshCam Cutting Solutions Ltd.</span>

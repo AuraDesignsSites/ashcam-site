@@ -98,7 +98,7 @@ const Index = () => {
             <div className="space-y-6">
               <h2 className="text-3xl font-bold">Premium Saw Blades</h2>
               <p className="text-lg text-muted-foreground">
-                Our cutting-edge saw blades are engineered for maximum performance and durability. 
+                Our high-quality Japanese imported saw blades are engineered for maximum performance and durability. 
                 From precision woodworking to heavy-duty industrial applications.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -141,7 +141,7 @@ const Index = () => {
               <Button asChild variant="secondary" size="lg">
                 <Link to="/contact">Get a Quote</Link>
               </Button>
-              <Button asChild variant="ghost" size="lg" className="text-primary-foreground border-primary-foreground hover:bg-primary-foreground hover:text-primary">
+              <Button asChild variant="outline" size="lg" className="text-primary-foreground border-2 border-primary-foreground bg-transparent hover:bg-primary-foreground hover:text-primary">
                 <Link to="/about">Learn More</Link>
               </Button>
             </div>

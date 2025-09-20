@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "./ui/button";
 import { Menu, X } from "lucide-react";
-import ashcamLogo from "@/assets/ashcam-logo.jpeg";
+import ashcamLogo from "@/assets/Logov2.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -27,7 +27,7 @@ const Header = () => {
             <img 
               src={ashcamLogo} 
               alt="AshCam Cutting Solutions" 
-              className="h-16 w-16"
+              className="h-16 w-auto object-contain"
             />
           </Link>
 
