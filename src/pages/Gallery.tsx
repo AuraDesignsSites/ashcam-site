@@ -12,6 +12,7 @@ import stockPhoto4 from "@/assets/stock-photo4.png";
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<{ title: string; image: string } | null>(null);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   // Product gallery images - showcasing the actual diamond cutting blades
   const productImages = [
@@ -76,7 +77,10 @@ const Gallery = () => {
               <div 
                 key={index} 
                 className="group relative overflow-hidden rounded-lg border border-border hover-lift cursor-pointer"
-                onClick={() => setSelectedImage(product)}
+                onClick={() => {
+                  setSelectedImage(product);
+                  setImageLoaded(false);
+                }}
               >
                 <img 
                   src={product.image} 
@@ -113,30 +117,46 @@ const Gallery = () => {
       {selectedImage && (
         <div 
           className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
-          onClick={() => setSelectedImage(null)}
+          onClick={() => {
+            setSelectedImage(null);
+            setImageLoaded(false);
+          }}
         >
           <div className="relative max-w-7xl max-h-full">
+            {!imageLoaded && (
+              <div className="flex items-center justify-center w-full h-96">
+                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+              </div>
+            )}
             <img 
               src={selectedImage.image} 
               alt={selectedImage.title}
-              className="max-w-full max-h-full object-contain"
+              className={`max-w-full max-h-full object-contain transition-opacity duration-300 ${
+                imageLoaded ? 'opacity-100' : 'opacity-0 absolute'
+              }`}
+              onLoad={() => setImageLoaded(true)}
             />
-            <Button
-              variant="ghost"
-              size="icon"
-              className="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white hover:text-white"
-              onClick={(e) => {
-                e.stopPropagation();
-                setSelectedImage(null);
-              }}
-            >
-              <X className="h-6 w-6" />
-            </Button>
-            <div className="absolute bottom-4 left-4 right-4">
-              <div className="bg-black/50 backdrop-blur-sm rounded-lg p-3 text-center">
-                <h3 className="text-white font-semibold text-lg">{selectedImage.title}</h3>
-              </div>
-            </div>
+            {imageLoaded && (
+              <>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white hover:text-white"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setSelectedImage(null);
+                    setImageLoaded(false);
+                  }}
+                >
+                  <X className="h-6 w-6" />
+                </Button>
+                <div className="absolute bottom-4 left-4 right-4">
+                  <div className="bg-black/50 backdrop-blur-sm rounded-lg p-3 text-center">
+                    <h3 className="text-white font-semibold text-lg">{selectedImage.title}</h3>
+                  </div>
+                </div>
+              </>
+            )}
           </div>
         </div>
       )}
