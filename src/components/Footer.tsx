@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin } from "lucide-react";
-import ashcamLogo from "@/assets/Logov2.png";
+import ashcamLogo from "@/assets/ashcam-logo-v2.png";
 
 const Footer = () => {
   return (
@@ -19,8 +19,13 @@ const Footer = () => {
                 <span className="text-lg font-bold">AshCam Cutting Solutions Ltd.</span>
               </div>
             </div>
-            <p className="text-muted-foreground mb-6 max-w-md">
+            <p className="text-muted-foreground mb-4 max-w-md">
               Precision Blades. Lasting Cuts.
+            </p>
+            <p className="text-sm text-muted-foreground mb-6">
+              <Link to="/service-areas" className="hover:text-primary-foreground transition-colors">
+                Serving Toronto & the GTA: Toronto, Vaughan, Markham, Richmond Hill, Mississauga, Brampton.
+              </Link>
             </p>
           </div>
 

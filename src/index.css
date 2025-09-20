@@ -160,4 +160,39 @@ All colors MUST be HSL.
   .hover-glow {
     @apply transition-smooth hover:shadow-[0_0_20px_hsl(var(--primary)/0.3)];
   }
+
+  /* Flip Card Animation */
+  .flip-card {
+    perspective: 1000px;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+  
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+  
+  .flip-card-inner.flipped {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    top: 0;
+    left: 0;
+  }
+  
+  .flip-card-back {
+    transform: rotateY(180deg);
+  }
+
 }

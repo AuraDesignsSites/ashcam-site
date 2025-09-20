@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import Layout from "@/components/Layout";
+import { ContactSeo } from "@/lib/seo";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -43,6 +44,7 @@ const Contact = () => {
 
   return (
     <Layout>
+      <ContactSeo />
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-background to-surface-light">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

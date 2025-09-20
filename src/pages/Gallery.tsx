@@ -2,33 +2,39 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import Layout from "@/components/Layout";
+import sixAndHalfBlade from "@/assets/diamond-blade-6.5-inch.png";
+import sevenAndQuarterBlade from "@/assets/diamond-blade-7.25-inch.png";
+import stockPhoto1 from "@/assets/stock-photo1.png";
+import stockPhoto2 from "@/assets/stock-photo2.jpg";
+import stockPhoto3 from "@/assets/stock-photo3.jpg";
+import stockPhoto4 from "@/assets/stock-photo4.png";
 
 const Gallery = () => {
   // Product gallery images - showcasing the actual diamond cutting blades
   const productImages = [
     {
-      title: "6½ Inch Diamond Blade",
-      image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&h=400&fit=crop&crop=center"
-    },
-    {
-      title: "7¼ Inch Diamond Blade", 
-      image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&h=400&fit=crop&crop=center"
-    },
-    {
       title: "14 Inch Diamond Blade",
-      image: "https://images.unsplash.com/photo-1565843708714-1d20842d9d78?w=600&h=400&fit=crop&crop=center"
+      image: stockPhoto1
     },
     {
       title: "Diamond Blade in Action",
-      image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&h=400&fit=crop&crop=center"
+      image: stockPhoto2
     },
     {
       title: "Professional Quality",
-      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop&crop=center"
+      image: stockPhoto3
     },
     {
       title: "Concrete Cutting Results",
-      image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600&h=400&fit=crop&crop=center"
+      image: stockPhoto4
+    },
+    {
+      title: "6½ Inch Diamond Blade",
+      image: sixAndHalfBlade
+    },
+    {
+      title: "7¼ Inch Diamond Blade", 
+      image: sevenAndQuarterBlade
     }
   ];
 
@@ -40,7 +46,7 @@ const Gallery = () => {
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <h1 className="text-4xl sm:text-5xl font-bold">Product Gallery</h1>
             <p className="text-xl text-muted-foreground">
-              Explore our premium diamond cutting blades in detail. See the quality, precision, and performance that sets AshCam apart.
+              Explore our premium diamond cutting blades in detail. See the quality, precision, and performance that sets AshCam apart across Richmond Hill, Mississauga, and Brampton.
             </p>
             <Button asChild variant="hero" size="lg" className="group">
               <Link to="/products">

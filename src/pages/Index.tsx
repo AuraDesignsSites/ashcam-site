@@ -3,12 +3,14 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { ArrowRight, Shield, Clock, Award, Wrench, Settings, Zap } from "lucide-react";
 import Layout from "@/components/Layout";
+import { HomeSeo } from "@/lib/seo";
 import heroWorkshop from "@/assets/hero-workshop.jpg";
-import sawBlades from "@/assets/saw-blades-collection.jpg";
+import sawBlades from "@/assets/diamond-blade-collection.png";
 
 const Index = () => {
   return (
     <Layout>
+      <HomeSeo />
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-background to-surface-light overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5"></div>
@@ -21,7 +23,7 @@ const Index = () => {
                   <span className="text-primary block">Cutting Solutions</span>
                 </h1>
                 <p className="text-xl text-muted-foreground max-w-lg">
-                  Leading provider of high-quality industrial cutting tools and saw blades. 
+                  Leading provider of high-quality industrial cutting tools and saw blades across Toronto and the GTA. 
                   Precision, reliability, and performance you can trust.
                 </p>
               </div>
@@ -41,7 +43,7 @@ const Index = () => {
               <div className="relative rounded-lg overflow-hidden shadow-2xl">
                 <img 
                   src={heroWorkshop} 
-                  alt="Professional workshop with cutting tools" 
+                  alt="Professional workshop with cutting tools — Toronto jobsite" 
                   className="w-full h-[400px] object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
@@ -121,7 +123,7 @@ const Index = () => {
             <div className="relative">
               <img 
                 src={sawBlades} 
-                alt="Collection of professional saw blades" 
+                alt="Collection of professional saw blades — GTA construction" 
                 className="w-full rounded-lg shadow-lg"
               />
             </div>

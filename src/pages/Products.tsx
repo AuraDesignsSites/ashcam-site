@@ -2,11 +2,18 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle } from "lucide-react";
+import { ArrowRight, CheckCircle, RotateCcw } from "lucide-react";
 import Layout from "@/components/Layout";
-import sawBlades from "@/assets/saw-blades-collection.jpg";
+import { Seo } from "@/lib/seo";
+import { useState } from "react";
+import sawBlades from "@/assets/diamond-blade-collection.png";
+import sixAndHalfBlade from "@/assets/diamond-blade-6.5-inch.png";
+import sevenAndQuarterBlade from "@/assets/diamond-blade-7.25-inch.png";
+import fourteenInchBlade from "@/assets/stock-photo1.png";
 
 const Products = () => {
+  const [flippedCards, setFlippedCards] = useState<Set<number>>(new Set());
+
   const products = [
     {
       name: "Diamond Blade Cutting Disc",
@@ -14,7 +21,8 @@ const Products = () => {
       description: "High-performance 6½ inch blade engineered for concrete, stone, and masonry cutting. Designed for durability and precision in compact cutting applications.",
       size: "6½ inches",
       features: ["Diamond Segments", "Wet/Dry Use", "Precision Cutting"],
-      price: "$35"
+      price: "$35",
+      image: sixAndHalfBlade
     },
     {
       name: "Diamond Blade Cutting Disc",
@@ -22,7 +30,8 @@ const Products = () => {
       description: "High-performance 7¼ inch blade engineered for concrete, stone, and masonry cutting. Designed for durability and precision in medium-duty cutting applications.",
       size: "7¼ inches",
       features: ["Diamond Segments", "Wet/Dry Use", "Precision Cutting"],
-      price: "$40"
+      price: "$40",
+      image: sevenAndQuarterBlade
     },
     {
       name: "Diamond Blade Cutting Disc",
@@ -30,16 +39,77 @@ const Products = () => {
       description: "High-performance 14 inch blade engineered for concrete, stone, and masonry cutting. Designed for durability and precision in heavy-duty cutting applications.",
       size: "14 inches",
       features: ["Diamond Segments", "Wet/Dry Use", "Precision Cutting"],
-      price: "$85"
+      price: "$85",
+      image: fourteenInchBlade
     }
   ];
+
+  const toggleFlip = (index: number) => {
+    setFlippedCards(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(index)) {
+        newSet.delete(index);
+      } else {
+        newSet.add(index);
+      }
+      return newSet;
+    });
+  };
 
   const categoryColors: Record<string, string> = {
     "Masonry & Concrete": "bg-orange-100 text-orange-800"
   };
 
+  // Generate Product schema for each product
+  const productSchemas = products.map(product => ({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": product.name,
+    "description": product.description,
+    "category": product.category,
+    "brand": {
+      "@type": "Brand",
+      "name": "AshCam Cutting Solutions"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": product.price.replace('$', ''),
+      "priceCurrency": "CAD",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "AshCam Cutting Solutions Ltd"
+      }
+    },
+    "additionalProperty": [
+      {
+        "@type": "PropertyValue",
+        "name": "Size",
+        "value": product.size
+      },
+      {
+        "@type": "PropertyValue", 
+        "name": "Features",
+        "value": product.features.join(", ")
+      }
+    ]
+  }));
+
   return (
     <Layout>
+      <Seo
+        title="Diamond Cutting Blades — Toronto & GTA"
+        description="Professional diamond cutting blades for concrete and masonry work across Toronto, Vaughan, Markham, Richmond Hill, Mississauga, and Brampton."
+        keywords={[
+          "diamond cutting blades Toronto",
+          "concrete saw blades GTA", 
+          "masonry cutting tools Vaughan",
+          "diamond blades Markham",
+          "cutting discs Richmond Hill"
+        ]}
+        canonical="/products"
+        structuredData={productSchemas}
+      />
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-background to-surface-light">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -48,7 +118,7 @@ const Products = () => {
               <h1 className="text-4xl sm:text-5xl font-bold">Our Products</h1>
               <p className="text-xl text-muted-foreground">
                 Professional diamond cutting blades engineered for precision, 
-                performance, and durability in concrete and masonry applications.
+                performance, and durability in concrete and masonry applications across Toronto, Vaughan, and Markham.
               </p>
               <Button asChild variant="hero" size="lg" className="group">
                 <Link to="/contact">
@@ -60,7 +130,7 @@ const Products = () => {
             <div className="relative">
               <img 
                 src={sawBlades} 
-                alt="Professional saw blades collection" 
+                alt="Professional saw blades collection — Vaughan masonry work" 
                 className="w-full rounded-lg shadow-lg"
               />
             </div>
@@ -79,50 +149,115 @@ const Products = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {products.map((product, index) => (
-              <Card key={index} className="border border-border hover-lift group">
-                <CardHeader>
-                  <div className="space-y-3">
-                    <CardTitle className="text-lg">{product.name}</CardTitle>
-                    <Badge className={categoryColors[product.category] || "bg-gray-100 text-gray-800"}>
-                      {product.category}
-                    </Badge>
-                    <p className="text-muted-foreground text-sm">{product.description}</p>
+            {products.map((product, index) => {
+              const isFlipped = flippedCards.has(index);
+              const hasImage = product.image !== null;
+              
+              return (
+                <div key={index} className="flip-card h-[500px]" onClick={() => hasImage && toggleFlip(index)}>
+                  <div className={`flip-card-inner ${isFlipped ? 'flipped' : ''}`}>
+                    {/* Front of card */}
+                    <div className="flip-card-front">
+                      <Card className="border border-border hover-lift group h-full flex flex-col">
+                        <CardHeader className="flex-shrink-0">
+                          <div className="space-y-3">
+                            <CardTitle className="text-lg">{product.name}</CardTitle>
+                            <Badge className={categoryColors[product.category] || "bg-gray-100 text-gray-800"}>
+                              {product.category}
+                            </Badge>
+                            <p className="text-muted-foreground text-sm">{product.description}</p>
+                          </div>
+                        </CardHeader>
+                        <CardContent className="flex-1 flex flex-col space-y-4">
+                          <div className="text-left">
+                            <h4 className="font-medium mb-2">Size:</h4>
+                            <Badge variant="outline" className="text-sm">
+                              {product.size}
+                            </Badge>
+                          </div>
+                          
+                          <div className="flex-1">
+                            <h4 className="font-medium mb-2">Key Features:</h4>
+                            <ul className="space-y-1">
+                              {product.features.map((feature, i) => (
+                                <li key={i} className="flex items-center text-sm text-muted-foreground">
+                                  <CheckCircle className="h-3 w-3 text-primary mr-2 flex-shrink-0" />
+                                  <span>{feature}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                          
+                          <div className="flex justify-between items-center pt-4 border-t">
+                            <span className="font-semibold text-primary">{product.price}</span>
+                            <div className="flex gap-2">
+                              {hasImage && (
+                                <Button 
+                                  variant="outline" 
+                                  size="sm" 
+                                  className="group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
+                                  onClick={(e) => {
+                                    e.stopPropagation();
+                                    toggleFlip(index);
+                                  }}
+                                >
+                                  <RotateCcw className="h-3 w-3 mr-1" />
+                                  View Image
+                                </Button>
+                              )}
+                              <Button asChild variant="outline" size="sm" className="group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                                <Link to="/contact">Get Quote</Link>
+                              </Button>
+                            </div>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </div>
+
+                    {/* Back of card - Image */}
+                    {hasImage && (
+                      <div className="flip-card-back">
+                        <Card className="border border-border h-full flex flex-col">
+                          <div className="relative w-full h-full bg-background rounded-lg overflow-hidden p-6 flex flex-col">
+                            <div className="flex-1 flex items-center justify-center">
+                              <img 
+                                src={product.image} 
+                                alt={`${product.name} - ${product.size}`}
+                                className="max-w-full max-h-full object-contain"
+                              />
+                            </div>
+                            <div className="absolute top-4 right-4">
+                              <Button 
+                                variant="outline" 
+                                size="sm"
+                                className="bg-background/90 backdrop-blur-sm shadow-lg hover:bg-primary hover:text-primary-foreground transition-colors"
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  toggleFlip(index);
+                                }}
+                              >
+                                <RotateCcw className="h-3 w-3 mr-1" />
+                                Back
+                              </Button>
+                            </div>
+                            <div className="absolute bottom-4 left-4 right-4">
+                              <div className="bg-background/90 backdrop-blur-sm rounded-lg p-3 shadow-lg">
+                                <h3 className="font-semibold text-sm">{product.name}</h3>
+                                <p className="text-xs text-muted-foreground">{product.size}</p>
+                              </div>
+                            </div>
+                          </div>
+                        </Card>
+                      </div>
+                    )}
                   </div>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div>
-                    <h4 className="font-medium mb-2">Size:</h4>
-                    <Badge variant="outline" className="text-sm">
-                      {product.size}
-                    </Badge>
-                  </div>
-                  
-                  <div>
-                    <h4 className="font-medium mb-2">Key Features:</h4>
-                    <ul className="space-y-1">
-                      {product.features.map((feature, i) => (
-                        <li key={i} className="flex items-center text-sm text-muted-foreground">
-                          <CheckCircle className="h-3 w-3 text-primary mr-2" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  
-                  <div className="flex justify-between items-center pt-4 border-t">
-                    <span className="font-semibold text-primary">{product.price}</span>
-                    <Button asChild variant="outline" size="sm" className="group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                      <Link to="/contact">Get Quote</Link>
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                </div>
+              );
+            })}
           </div>
           
           {/* More Coming Soon */}
-          <div className="mt-12 text-center">
+          <div className="mt-16 text-center">
             <div className="inline-flex items-center space-x-2 bg-primary/10 border border-primary/20 rounded-lg px-6 py-3">
               <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
               <span className="text-primary font-medium">More products coming soon</span>

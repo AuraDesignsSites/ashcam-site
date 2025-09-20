@@ -11,7 +11,7 @@ const About = () => {
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <h1 className="text-4xl sm:text-5xl font-bold">About AshCam Cutting Solutions</h1>
             <p className="text-xl text-muted-foreground">
-              Delivering precision cutting solutions with unwavering commitment to quality and innovation.
+              Delivering precision cutting solutions across Toronto and the GTA with unwavering commitment to quality and innovation.
             </p>
           </div>
         </div>
