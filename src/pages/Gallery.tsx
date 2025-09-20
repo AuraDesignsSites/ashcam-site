@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, X } from "lucide-react";
 import Layout from "@/components/Layout";
+import { useState } from "react";
 import sixAndHalfBlade from "@/assets/diamond-blade-6.5-inch.png";
 import sevenAndQuarterBlade from "@/assets/diamond-blade-7.25-inch.png";
 import stockPhoto1 from "@/assets/stock-photo1.png";
@@ -10,6 +11,8 @@ import stockPhoto3 from "@/assets/stock-photo3.jpg";
 import stockPhoto4 from "@/assets/stock-photo4.png";
 
 const Gallery = () => {
+  const [selectedImage, setSelectedImage] = useState<{ title: string; image: string } | null>(null);
+
   // Product gallery images - showcasing the actual diamond cutting blades
   const productImages = [
     {
@@ -70,7 +73,11 @@ const Gallery = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {productImages.map((product, index) => (
-              <div key={index} className="group relative overflow-hidden rounded-lg border border-border hover-lift">
+              <div 
+                key={index} 
+                className="group relative overflow-hidden rounded-lg border border-border hover-lift cursor-pointer"
+                onClick={() => setSelectedImage(product)}
+              >
                 <img 
                   src={product.image} 
                   alt={product.title}
@@ -101,6 +108,38 @@ const Gallery = () => {
           </div>
         </div>
       </section>
+
+      {/* Full-screen Image Modal */}
+      {selectedImage && (
+        <div 
+          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
+          onClick={() => setSelectedImage(null)}
+        >
+          <div className="relative max-w-7xl max-h-full">
+            <img 
+              src={selectedImage.image} 
+              alt={selectedImage.title}
+              className="max-w-full max-h-full object-contain"
+            />
+            <Button
+              variant="ghost"
+              size="icon"
+              className="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white hover:text-white"
+              onClick={(e) => {
+                e.stopPropagation();
+                setSelectedImage(null);
+              }}
+            >
+              <X className="h-6 w-6" />
+            </Button>
+            <div className="absolute bottom-4 left-4 right-4">
+              <div className="bg-black/50 backdrop-blur-sm rounded-lg p-3 text-center">
+                <h3 className="text-white font-semibold text-lg">{selectedImage.title}</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </Layout>
   );
 };
