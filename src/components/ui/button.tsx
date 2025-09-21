@@ -9,14 +9,14 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90 transition-smooth",
-        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
-        hero: "hero-gradient text-primary-foreground hover:bg-primary-glow transition-smooth font-semibold shadow-lg hover:shadow-xl hover:scale-105",
-        industrial: "bg-surface-dark text-primary-foreground hover:bg-surface-medium transition-smooth border border-primary/20",
+        default: "bg-primary text-primary-foreground hover:bg-primary/90 transition-smooth shadow-md font-semibold",
+        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90 shadow-md font-semibold",
+        outline: "border-2 border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground transition-smooth shadow-md font-semibold",
+        secondary: "bg-warm-dark text-foreground hover:bg-warm-medium transition-smooth border border-primary/40 shadow-md font-semibold",
+        ghost: "text-primary hover:bg-primary/15 hover:text-primary transition-smooth font-medium",
+        link: "text-primary underline-offset-4 hover:underline font-medium",
+        hero: "hero-gradient text-primary-foreground hover:bg-primary-glow transition-smooth font-bold shadow-lg hover:shadow-xl hover:scale-105",
+        industrial: "bg-warm-medium text-foreground hover:bg-warm-dark transition-smooth border-2 border-primary/50 shadow-md hover:shadow-lg font-semibold",
       },
       size: {
         default: "h-10 px-4 py-2",

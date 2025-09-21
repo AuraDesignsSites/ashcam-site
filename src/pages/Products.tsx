@@ -164,7 +164,7 @@ const Products = () => {
                         <CardHeader className="flex-shrink-0">
                           <div className="space-y-3">
                             <CardTitle className="text-lg">{product.name}</CardTitle>
-                            <Badge className={categoryColors[product.category] || "bg-gray-100 text-gray-800"}>
+                            <Badge className={categoryColors[product.category] || "bg-muted text-muted-foreground"}>
                               {product.category}
                             </Badge>
                             <p className="text-muted-foreground text-sm">{product.description}</p>
@@ -197,7 +197,7 @@ const Products = () => {
                                 <Button 
                                   variant="outline" 
                                   size="sm" 
-                                  className="group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
+                                  className="transition-colors"
                                   onClick={(e) => {
                                     e.stopPropagation();
                                     toggleFlip(index);
@@ -207,7 +207,7 @@ const Products = () => {
                                   View Image
                                 </Button>
                               )}
-                              <Button asChild variant="outline" size="sm" className="group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                              <Button asChild variant="outline" size="sm">
                                 <Link to="/contact">Get Quote</Link>
                               </Button>
                             </div>
@@ -233,7 +233,7 @@ const Products = () => {
                               <Button 
                                 variant="outline" 
                                 size="sm"
-                                className="bg-background/90 backdrop-blur-sm shadow-lg hover:bg-primary hover:text-primary-foreground transition-colors"
+                                className="bg-background/90 backdrop-blur-sm shadow-lg transition-colors"
                                 onClick={(e) => {
                                   e.stopPropagation();
                                   toggleFlip(index);
@@ -270,7 +270,7 @@ const Products = () => {
       </section>
 
       {/* Custom Solutions */}
-      <section className="py-20 bg-surface-light">
+      <section className="py-20 bg-warm-off-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center space-y-8">
             <h2 className="text-3xl font-bold">Custom Solutions Available</h2>
@@ -298,7 +298,7 @@ const Products = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-warm-off-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold mb-4">What Our Customers Say</h2>
@@ -363,18 +363,18 @@ const Products = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 hero-gradient text-primary-foreground">
+      <section className="py-20 hero-gradient text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-3xl mx-auto space-y-6">
-            <h2 className="text-3xl font-bold">Ready to Order?</h2>
-            <p className="text-xl opacity-90">
+            <h2 className="text-3xl font-bold text-white">Ready to Order?</h2>
+            <p className="text-xl text-white/90">
               Contact our team for expert advice, detailed specifications, and competitive pricing on all products.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild variant="secondary" size="lg">
                 <Link to="/contact">Get Quote</Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="text-primary-foreground border-2 border-primary-foreground bg-transparent hover:bg-primary-foreground hover:text-primary">
+              <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
                 <Link to="/gallery">View Gallery</Link>
               </Button>
             </div>

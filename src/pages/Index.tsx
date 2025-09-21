@@ -13,7 +13,7 @@ const Index = () => {
     <Layout>
       <HomeSeo />
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-background to-surface-light overflow-hidden">
+      <section className="relative warm-gradient overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5"></div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32 relative">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -56,7 +56,7 @@ const Index = () => {
       </section>
 
       {/* Services Overview */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-warm-off-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold mb-4">Why Choose AshCam?</h2>
@@ -96,7 +96,7 @@ const Index = () => {
       </section>
 
       {/* Featured Products */}
-      <section className="py-20 bg-surface-light">
+      <section className="py-20 bg-warm-cream">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
@@ -135,18 +135,18 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 hero-gradient text-primary-foreground">
+      <section className="py-20 hero-gradient text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-3xl mx-auto space-y-6">
-            <h2 className="text-3xl font-bold">Ready to Get Started?</h2>
-            <p className="text-xl opacity-90">
+            <h2 className="text-3xl font-bold text-white">Ready to Get Started?</h2>
+            <p className="text-xl text-white/90">
               Contact us today for expert advice and competitive quotes on all your cutting tool needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild variant="secondary" size="lg">
                 <Link to="/contact">Get a Quote</Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="text-primary-foreground border-2 border-primary-foreground bg-transparent hover:bg-primary-foreground hover:text-primary">
+              <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
                 <Link to="/about">Learn More</Link>
               </Button>
             </div>

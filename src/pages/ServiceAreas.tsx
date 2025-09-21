@@ -82,12 +82,12 @@ const ServiceAreasPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-primary text-primary-foreground">
+      <section className="py-16 bg-primary text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-4">
+          <h2 className="text-3xl font-bold mb-4 text-white">
             Ready to Get Started?
           </h2>
-          <p className="text-xl mb-8 opacity-90">
+          <p className="text-xl mb-8 text-white/90">
             Contact us today for a quote or technical advice. We serve all areas across Toronto and the GTA.
           </p>
           <Button asChild size="lg" variant="secondary">

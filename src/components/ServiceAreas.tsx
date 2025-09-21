@@ -4,7 +4,7 @@ import { SERVICE_AREAS } from "@/lib/orgData";
 
 export default function ServiceAreas({ heading = "Serving Toronto & the GTA" }: { heading?: string }) {
   return (
-    <section aria-labelledby="service-areas-heading" className="py-12 bg-surface-light">
+    <section aria-labelledby="service-areas-heading" className="py-12 bg-warm-cream">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <h2 id="service-areas-heading" className="text-3xl font-bold text-center mb-6">
           {heading}

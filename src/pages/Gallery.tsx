@@ -96,18 +96,18 @@ const Gallery = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 hero-gradient text-primary-foreground">
+      <section className="py-20 hero-gradient text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-3xl mx-auto space-y-6">
-            <h2 className="text-3xl font-bold">Ready to Order?</h2>
-            <p className="text-xl opacity-90">
+            <h2 className="text-3xl font-bold text-white">Ready to Order?</h2>
+            <p className="text-xl text-white/90">
               Contact us for expert advice, detailed specifications, and competitive pricing on our diamond cutting blades.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild variant="secondary" size="lg">
                 <Link to="/contact">Get Quote</Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="text-primary-foreground border-2 border-primary-foreground bg-transparent hover:bg-primary-foreground hover:text-primary">
+              <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
                 <Link to="/products">View Products</Link>
               </Button>
             </div>

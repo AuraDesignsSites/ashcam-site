@@ -44,7 +44,7 @@ const About = () => {
       </section>
 
       {/* Values */}
-      <section className="py-20 bg-surface-light">
+      <section className="py-20 bg-warm-light">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold mb-4">Our Values</h2>
@@ -99,11 +99,11 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 hero-gradient text-primary-foreground">
+      <section className="py-20 hero-gradient text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-3xl mx-auto space-y-6">
-            <h2 className="text-3xl font-bold">Ready to Work With Us?</h2>
-            <p className="text-xl opacity-90">
+            <h2 className="text-3xl font-bold text-white">Ready to Work With Us?</h2>
+            <p className="text-xl text-white/90">
               Get in touch to discuss your cutting tool requirements and discover how we can help your business succeed.
             </p>
             <Button asChild variant="secondary" size="lg">

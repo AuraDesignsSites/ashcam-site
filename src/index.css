@@ -2,53 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Warm Theme - Dramatic warm colors with high contrast buttons - v2 */
+
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 9%;
+    /* Warm Base Colors - More Dramatic */
+    --background: 45 30% 96%;           /* Noticeably warm off-white */
+    --foreground: 30 20% 12%;           /* Darker warm brown */
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 9%;
+    --card: 45 35% 94%;                 /* More noticeable warm cream */
+    --card-foreground: 30 20% 12%;      /* Darker warm brown */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 9%;
+    --popover: 45 35% 94%;              /* More noticeable warm cream */
+    --popover-foreground: 30 20% 12%;   /* Darker warm brown */
 
-    --primary: 24 95% 53%;
-    --primary-foreground: 0 0% 100%;
+    /* Orange Primary (unchanged) */
+    --primary: 24 95% 53%;              /* Vibrant orange */
+    --primary-foreground: 0 0% 100%;    /* White */
 
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 9%;
+    /* Warm Secondary Colors - More Contrast */
+    --secondary: 45 25% 90%;            /* More noticeable warm gray */
+    --secondary-foreground: 30 20% 15%; /* Darker warm brown */
 
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 45 20% 88%;                /* More noticeable warm gray */
+    --muted-foreground: 30 15% 40%;     /* Darker warm brown */
 
-    --accent: 45 93% 47%;
-    --accent-foreground: 0 0% 9%;
+    /* Complementary Accent Colors */
+    --accent: 200 60% 45%;              /* Soft teal blue */
+    --accent-foreground: 0 0% 100%;     /* White */
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;           /* Red (unchanged) */
+    --destructive-foreground: 0 0% 100%; /* White */
 
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 24 95% 53%;
+    /* Warm Borders and Inputs - More Noticeable */
+    --border: 45 30% 85%;               /* More noticeable warm gray */
+    --input: 45 25% 87%;                /* More noticeable warm input */
+    --ring: 24 95% 53%;                 /* Orange ring */
 
-    /* Industrial Design Tokens */
-    --primary-glow: 24 100% 60%;
-    --surface-dark: 0 0% 6%;
-    --surface-medium: 0 0% 12%;
-    --surface-light: 0 0% 96%;
+    /* Sophisticated Surface Colors - More Dramatic */
+    --surface-dark: 45 28% 88%;         /* More noticeable warm gray */
+    --surface-medium: 45 25% 91%;       /* More noticeable warm light gray */
+    --surface-light: 45 35% 93%;        /* More noticeable warm cream */
     
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    /* Warm Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(24 95% 45%), hsl(24 100% 55%));
     --gradient-surface: linear-gradient(180deg, hsl(var(--surface-light)), hsl(var(--background)));
+    --gradient-warm: linear-gradient(135deg, hsl(45 25% 97%), hsl(45 20% 98%));
     
-    /* Shadows */
-    --shadow-industrial: 0 20px 25px -5px hsl(var(--primary) / 0.1), 0 10px 10px -5px hsl(var(--primary) / 0.05);
-    --shadow-card: 0 4px 6px -1px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.06);
+    /* Refined Shadows */
+    --shadow-industrial: 0 8px 25px -5px hsl(var(--primary) / 0.12), 0 4px 10px -3px hsl(var(--primary) / 0.08);
+    --shadow-card: 0 4px 12px -2px hsl(30 15% 0% / 0.08), 0 2px 6px -1px hsl(30 15% 0% / 0.05);
+    --shadow-warm: 0 4px 12px -2px hsl(45 20% 0% / 0.06), 0 2px 6px -1px hsl(45 20% 0% / 0.04);
     
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -56,21 +64,15 @@ All colors MUST be HSL.
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Sidebar with warm tones */
+    --sidebar-background: 45 20% 97%;
+    --sidebar-foreground: 30 15% 20%;
+    --sidebar-primary: 24 95% 53%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 45 15% 94%;
+    --sidebar-accent-foreground: 30 15% 20%;
+    --sidebar-border: 45 20% 88%;
+    --sidebar-ring: 24 95% 53%;
   }
 
   .dark {
@@ -135,12 +137,20 @@ All colors MUST be HSL.
     background: var(--gradient-hero);
   }
   
+  .warm-gradient {
+    background: var(--gradient-warm);
+  }
+  
   .industrial-shadow {
     box-shadow: var(--shadow-industrial);
   }
   
   .card-shadow {
     box-shadow: var(--shadow-card);
+  }
+  
+  .warm-shadow {
+    box-shadow: var(--shadow-warm);
   }
   
   /* Smooth Transitions */
@@ -159,6 +169,49 @@ All colors MUST be HSL.
   
   .hover-glow {
     @apply transition-smooth hover:shadow-[0_0_20px_hsl(var(--primary)/0.3)];
+  }
+  
+  /* Warm Background Variations - More Dramatic */
+  .bg-warm-cream {
+    background-color: hsl(45 35% 93%);
+  }
+  
+  .bg-warm-off-white {
+    background-color: hsl(45 30% 96%);
+  }
+  
+  .bg-warm-light {
+    background-color: hsl(45 25% 91%);
+  }
+  
+  .bg-warm-medium {
+    background-color: hsl(45 25% 91%);
+  }
+  
+  /* Text Colors */
+  .text-warm-dark {
+    color: hsl(30 15% 15%);
+  }
+  
+  .text-warm-medium {
+    color: hsl(30 10% 45%);
+  }
+  
+  .text-warm-light {
+    color: hsl(30 8% 65%);
+  }
+  
+  /* Additional Warm Colors for Buttons - More Contrast */
+  .bg-warm-dark {
+    background-color: hsl(45 28% 88%);
+  }
+  
+  .hover\:bg-warm-dark:hover {
+    background-color: hsl(45 30% 85%);
+  }
+  
+  .hover\:bg-warm-medium:hover {
+    background-color: hsl(45 25% 88%);
   }
 
   /* Flip Card Animation */
