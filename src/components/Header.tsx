@@ -19,7 +19,7 @@ const Header = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
+    <header className="sticky top-0 z-50 w-full header-background border-b border-gray-700">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -40,7 +40,7 @@ const Header = () => {
                 className={`text-sm font-medium transition-smooth ${
                   isActive(item.href)
                     ? "text-primary border-b-2 border-primary"
-                    : "text-muted-foreground hover:text-foreground"
+                    : "text-gray-300 hover:text-white"
                 }`}
               >
                 {item.name}
@@ -58,7 +58,7 @@ const Header = () => {
             <Button
               variant="ghost"
               size="icon"
-              className="md:hidden hover:bg-primary/10 hover:text-primary"
+              className="md:hidden hover:bg-primary/20 hover:text-primary text-gray-300"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -76,8 +76,8 @@ const Header = () => {
                   to={item.href}
                   className={`block px-3 py-2 text-base font-medium transition-smooth ${
                     isActive(item.href)
-                      ? "text-primary bg-primary/10"
-                      : "text-muted-foreground hover:text-foreground hover:bg-primary/10"
+                      ? "text-primary bg-primary/20"
+                      : "text-gray-300 hover:text-white hover:bg-primary/20"
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >

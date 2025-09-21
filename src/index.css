@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Warm Theme - Dramatic warm colors with high contrast buttons - v2 */
+/* Warm Theme - Dramatic warm colors with high contrast buttons - v6 - Isolated Header Color */
 
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
@@ -47,6 +47,9 @@ All colors MUST be HSL.
     --surface-dark: 45 28% 88%;         /* More noticeable warm gray */
     --surface-medium: 45 25% 91%;       /* More noticeable warm light gray */
     --surface-light: 45 35% 93%;        /* More noticeable warm cream */
+    
+    /* Header Specific Color */
+    --header-background: 0 0% 11%;      /* Dark grey #1C1C1C for header only */
     
     /* Warm Gradients */
     --gradient-hero: linear-gradient(135deg, hsl(24 95% 45%), hsl(24 100% 55%));
@@ -139,6 +142,11 @@ All colors MUST be HSL.
   
   .warm-gradient {
     background: var(--gradient-warm);
+  }
+  
+  .header-background {
+    background-color: hsl(var(--header-background) / 0.9);
+    backdrop-filter: blur(8px);
   }
   
   .industrial-shadow {
