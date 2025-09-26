@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin } from "lucide-react";
-import ashcamLogo from "@/assets/ashcam-logo-v3.png";
+import ashcamLogo from "@/assets/ashcam-logo.png";
 
 const Footer = () => {
   return (
