@@ -6,10 +6,13 @@ import LazyImage from "@/components/LazyImage";
 import { useState } from "react";
 import sixAndHalfBlade from "@/assets/diamond-blade-6.5-inch.png";
 import sevenAndQuarterBlade from "@/assets/diamond-blade-7.25-inch.png";
+import fourteenInchBlade from "@/assets/diamond-blade-14-inch.png";
 import stockPhoto1 from "@/assets/stock-photo1.png";
 import stockPhoto2 from "@/assets/stock-photo2.jpg";
 import stockPhoto3 from "@/assets/stock-photo3.jpg";
 import stockPhoto4 from "@/assets/stock-photo4.png";
+import stockPhoto5 from "@/assets/stock-photo5.jpg";
+import stockPhoto6 from "@/assets/stock-photo6.jpg";
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<{ title: string; image: string } | null>(null);
@@ -18,20 +21,28 @@ const Gallery = () => {
   // Product gallery images - showcasing the actual diamond cutting blades
   const productImages = [
     {
-      title: "14 Inch Diamond Blade",
+      title: "Professional Work Environment",
       image: stockPhoto1
     },
     {
-      title: "Diamond Blade in Action",
+      title: "Industrial Cutting Operations",
       image: stockPhoto2
     },
     {
-      title: "Professional Quality",
+      title: "High-Quality Results",
       image: stockPhoto3
     },
     {
-      title: "Concrete Cutting Results",
+      title: "Concrete Cutting Excellence",
       image: stockPhoto4
+    },
+    {
+      title: "Advanced Cutting Technology",
+      image: stockPhoto5
+    },
+    {
+      title: "Precision Engineering",
+      image: stockPhoto6
     },
     {
       title: "6½ Inch Diamond Blade",
@@ -40,6 +51,10 @@ const Gallery = () => {
     {
       title: "7¼ Inch Diamond Blade", 
       image: sevenAndQuarterBlade
+    },
+    {
+      title: "14 Inch Diamond Blade",
+      image: fourteenInchBlade
     }
   ];
 

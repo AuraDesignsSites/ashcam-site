@@ -10,7 +10,7 @@ import { useState } from "react";
 import sawBlades from "@/assets/diamond-blade-collection.png";
 import sixAndHalfBlade from "@/assets/diamond-blade-6.5-inch.png";
 import sevenAndQuarterBlade from "@/assets/diamond-blade-7.25-inch.png";
-import fourteenInchBlade from "@/assets/stock-photo1.png";
+import fourteenInchBlade from "@/assets/diamond-blade-14-inch.png";
 
 const Products = () => {
   const [flippedCards, setFlippedCards] = useState<Set<number>>(new Set());

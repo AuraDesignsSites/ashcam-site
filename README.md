@@ -1,73 +1,131 @@
-# Welcome to your Lovable project
+# AshCam Cutting Solutions - Website
 
-## Project info
+A professional website for AshCam Cutting Solutions Ltd, specializing in premium diamond blades and masonry cutting tools across Toronto and the GTA.
 
-**URL**: https://lovable.dev/projects/916fd5fc-1d77-4bc7-8a11-970cb3ac0241
+## 🏢 About AshCam
 
-## How can I edit this code?
+AshCam Cutting Solutions Ltd provides high-quality industrial cutting tools and saw blades for concrete, masonry, metal, and tile cutting applications. We serve Toronto, Vaughan, Markham, Richmond Hill, Mississauga, Brampton, and the greater GTA area.
 
-There are several ways of editing your application.
+## 🚀 Features
 
-**Use Lovable**
+- **Product Showcase**: Interactive product gallery with detailed specifications
+- **Service Areas**: Coverage map and delivery information for GTA regions
+- **Contact System**: Easy quote requests and customer inquiries
+- **Responsive Design**: Optimized for desktop, tablet, and mobile devices
+- **SEO Optimized**: Built-in SEO components and structured data
+- **Modern UI**: Clean, professional design with shadcn/ui components
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/916fd5fc-1d77-4bc7-8a11-970cb3ac0241) and start prompting.
+## 🛠️ Tech Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+This project is built with modern web technologies:
 
-**Use your preferred IDE**
+- **Vite** - Fast build tool and development server
+- **TypeScript** - Type-safe JavaScript
+- **React 18** - Modern React with hooks and functional components
+- **React Router** - Client-side routing
+- **shadcn/ui** - Beautiful, accessible UI components
+- **Tailwind CSS** - Utility-first CSS framework
+- **Lucide React** - Beautiful icon library
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 📦 Installation & Setup
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Prerequisites
 
-Follow these steps:
+- Node.js (v16 or higher)
+- npm or yarn package manager
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Getting Started
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd ashcam-site
+   ```
 
-# Step 3: Install the necessary dependencies.
-npm i
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+3. **Start development server**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser**
+   Navigate to `http://localhost:5173`
+
+## 📁 Project Structure
+
+```
+src/
+├── components/          # Reusable UI components
+│   ├── ui/             # shadcn/ui components
+│   ├── Header.tsx      # Site header with navigation
+│   ├── Footer.tsx      # Site footer
+│   └── Layout.tsx      # Main layout wrapper
+├── pages/              # Page components
+│   ├── Index.tsx       # Homepage
+│   ├── Products.tsx    # Product showcase
+│   ├── Gallery.tsx     # Image gallery
+│   ├── About.tsx       # About page
+│   ├── Contact.tsx     # Contact form
+│   └── ServiceAreas.tsx # Service areas map
+├── assets/             # Images and static assets
+├── lib/                # Utility functions and data
+└── hooks/              # Custom React hooks
 ```
 
-**Edit a file directly in GitHub**
+## 🎨 Available Scripts
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
 
-**Use GitHub Codespaces**
+## 🌐 Deployment
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+The site can be deployed to any static hosting service:
 
-## What technologies are used for this project?
+- **Vercel** (recommended)
+- **Netlify**
+- **GitHub Pages**
+- **AWS S3 + CloudFront**
 
-This project is built with:
+### Build for Production
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+```bash
+npm run build
+```
 
-## How can I deploy this project?
+The built files will be in the `dist/` directory.
 
-Simply open [Lovable](https://lovable.dev/projects/916fd5fc-1d77-4bc7-8a11-970cb3ac0241) and click on Share -> Publish.
+## 📱 Browser Support
 
-## Can I connect a custom domain to my Lovable project?
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
 
-Yes, you can!
+## 🤝 Contributing
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## 📄 License
+
+This project is proprietary software owned by AshCam Cutting Solutions Ltd.
+
+## 📞 Contact
+
+**AshCam Cutting Solutions Ltd**
+- Website: [ashcamcutting.com](https://ashcamcutting.com)
+- Email: Contact through website
+- Service Areas: Toronto, Vaughan, Markham, Richmond Hill, Mississauga, Brampton, GTA
+
+---
+
+Built with ❤️ for AshCam Cutting Solutions
