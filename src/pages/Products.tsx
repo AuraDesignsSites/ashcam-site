@@ -18,29 +18,29 @@ const Products = () => {
   const products = [
     {
       name: "Diamond Blade Cutting Disc",
-      category: "Masonry & Concrete",
-      description: "High-performance 6½ inch blade engineered for concrete, stone, and masonry cutting. Designed for durability and precision in compact cutting applications.",
+      categories: ["Masonry & Concrete", "Metals", "Tile & Wood"],
+      description: "High-performance 6½ inch blade engineered for cutting concrete, stone, brick, masonry, steel, rebar, copper, aluminum, brass, ceramic tile, porcelain, marble, granite, and hardwood. Perfect for concrete slabs, metal fabrication, and flooring installation. Designed for durability and precision in compact cutting applications.",
       size: "6½ inches",
       features: ["Diamond Segments", "Wet/Dry Use", "Precision Cutting"],
-      price: "$35",
+      price: "Starting from $35",
       image: sixAndHalfBlade
     },
     {
       name: "Diamond Blade Cutting Disc",
-      category: "Masonry & Concrete", 
-      description: "High-performance 7¼ inch blade engineered for concrete, stone, and masonry cutting. Designed for durability and precision in medium-duty cutting applications.",
+      categories: ["Masonry & Concrete", "Metals", "Tile & Wood"], 
+      description: "High-performance 7¼ inch blade engineered for cutting concrete, stone, brick, masonry, steel, rebar, copper, aluminum, brass, ceramic tile, porcelain, marble, granite, and hardwood. Ideal for stone countertops, pipe cutting, and countertop fabrication. Designed for durability and precision in medium-duty cutting applications.",
       size: "7¼ inches",
       features: ["Diamond Segments", "Wet/Dry Use", "Precision Cutting"],
-      price: "$40",
+      price: "Starting from $40",
       image: sevenAndQuarterBlade
     },
     {
       name: "Diamond Blade Cutting Disc",
-      category: "Masonry & Concrete",
-      description: "High-performance 14 inch blade engineered for concrete, stone, and masonry cutting. Designed for durability and precision in heavy-duty cutting applications.",
+      categories: ["Masonry & Concrete", "Metals", "Tile & Wood"],
+      description: "High-performance 14 inch blade engineered for cutting concrete, stone, brick, masonry, steel, rebar, copper, aluminum, brass, ceramic tile, porcelain, marble, granite, and hardwood. Perfect for brick walls, structural steel work, and woodworking projects. Designed for durability and precision in heavy-duty cutting applications.",
       size: "14 inches",
       features: ["Diamond Segments", "Wet/Dry Use", "Precision Cutting"],
-      price: "$85",
+      price: "Starting from $85",
       image: fourteenInchBlade
     }
   ];
@@ -58,7 +58,9 @@ const Products = () => {
   };
 
   const categoryColors: Record<string, string> = {
-    "Masonry & Concrete": "bg-orange-100 text-orange-800"
+    "Masonry & Concrete": "bg-orange-100 text-orange-800",
+    "Metals": "bg-gray-100 text-gray-800",
+    "Tile & Wood": "bg-green-100 text-green-800"
   };
 
   // Generate Product schema for each product
@@ -67,14 +69,14 @@ const Products = () => {
     "@type": "Product",
     "name": product.name,
     "description": product.description,
-    "category": product.category,
+    "category": product.categories.join(", "),
     "brand": {
       "@type": "Brand",
       "name": "AshCam Cutting Solutions"
     },
     "offers": {
       "@type": "Offer",
-      "price": product.price.replace('$', ''),
+      "price": product.price.replace('Starting from $', ''),
       "priceCurrency": "CAD",
       "availability": "https://schema.org/InStock",
       "seller": {
@@ -92,6 +94,11 @@ const Products = () => {
         "@type": "PropertyValue", 
         "name": "Features",
         "value": product.features.join(", ")
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "Categories",
+        "value": product.categories.join(", ")
       }
     ]
   }));
@@ -100,13 +107,16 @@ const Products = () => {
     <Layout>
       <Seo
         title="Diamond Cutting Blades — Toronto & GTA"
-        description="Professional diamond cutting blades for concrete and masonry work across Toronto, Vaughan, Markham, Richmond Hill, Mississauga, and Brampton."
+        description="Professional diamond cutting blades for concrete, masonry, metal, and tile cutting across Toronto, Vaughan, Markham, Richmond Hill, Mississauga, and Brampton."
         keywords={[
           "diamond cutting blades Toronto",
           "concrete saw blades GTA", 
-          "masonry cutting tools Vaughan",
+          "metal cutting tools Vaughan",
           "diamond blades Markham",
-          "cutting discs Richmond Hill"
+          "cutting discs Richmond Hill",
+          "steel cutting blades",
+          "aluminum cutting tools",
+          "tile cutting blades"
         ]}
         canonical="/products"
         structuredData={productSchemas}
@@ -119,7 +129,7 @@ const Products = () => {
               <h1 className="text-4xl sm:text-5xl font-bold">Our Products</h1>
               <p className="text-xl text-muted-foreground">
                 Professional diamond cutting blades engineered for precision, 
-                performance, and durability in concrete and masonry applications across Toronto, Vaughan, and Markham.
+                performance, and durability in cutting concrete, masonry, metal, and tile applications across Toronto & GTA.
               </p>
               <Button asChild variant="hero" size="lg" className="group">
                 <Link to="/contact">
@@ -156,7 +166,7 @@ const Products = () => {
               const hasImage = product.image !== null;
               
               return (
-                <div key={index} className="flip-card h-[500px]" onClick={() => hasImage && toggleFlip(index)}>
+                <div key={index} className="flip-card h-[520px]" onClick={() => hasImage && toggleFlip(index)}>
                   <div className={`flip-card-inner ${isFlipped ? 'flipped' : ''}`}>
                     {/* Front of card */}
                     <div className="flip-card-front">
@@ -164,9 +174,13 @@ const Products = () => {
                         <CardHeader className="flex-shrink-0">
                           <div className="space-y-3">
                             <CardTitle className="text-lg">{product.name}</CardTitle>
-                            <Badge className={categoryColors[product.category] || "bg-muted text-muted-foreground"}>
-                              {product.category}
-                            </Badge>
+                            <div className="flex flex-wrap gap-2 justify-center">
+                              {product.categories.map((category, i) => (
+                                <Badge key={i} className={categoryColors[category] || "bg-muted text-muted-foreground"}>
+                                  {category}
+                                </Badge>
+                              ))}
+                            </div>
                             <p className="text-muted-foreground text-sm">{product.description}</p>
                           </div>
                         </CardHeader>
@@ -178,7 +192,7 @@ const Products = () => {
                             </Badge>
                           </div>
                           
-                          <div className="flex-1">
+                          <div className="flex-1 min-h-0">
                             <h4 className="font-medium mb-2">Key Features:</h4>
                             <ul className="space-y-1">
                               {product.features.map((feature, i) => (
@@ -190,7 +204,7 @@ const Products = () => {
                             </ul>
                           </div>
                           
-                          <div className="flex justify-between items-center pt-4 border-t">
+                          <div className="flex justify-between items-center pt-4 border-t mt-auto">
                             <span className="font-semibold text-primary">{product.price}</span>
                             <div className="flex gap-2">
                               {hasImage && (
@@ -207,9 +221,6 @@ const Products = () => {
                                   View Image
                                 </Button>
                               )}
-                              <Button asChild variant="outline" size="sm">
-                                <Link to="/contact">Get Quote</Link>
-                              </Button>
                             </div>
                           </div>
                         </CardContent>
@@ -257,6 +268,16 @@ const Products = () => {
                 </div>
               );
             })}
+          </div>
+          
+          {/* Get Quote Button */}
+          <div className="mt-12 text-center">
+            <Button asChild variant="hero" size="lg" className="group">
+              <Link to="/contact">
+                Get Quote for Products
+                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </Button>
           </div>
           
           {/* More Coming Soon */}

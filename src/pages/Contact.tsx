@@ -173,7 +173,7 @@ const Contact = () => {
                     icon: MapPin,
                     title: "Address",
                     content: "385 Osler Street, Unit 510, Toronto, ON, M6N 0B2",
-                    subtitle: "Visits by appointment"
+                    subtitle: "Parking available"
                   },
                   {
                     icon: Clock,
@@ -232,7 +232,7 @@ const Contact = () => {
               <span className="font-medium">385 Osler Street, Unit 510, Toronto, ON, M6N 0B2</span>
             </div>
             <p className="text-sm text-muted-foreground mt-4">
-              Free parking available • Wheelchair accessible • Public transit nearby
+              Free parking available • Public transit nearby
             </p>
           </div>
         </div>

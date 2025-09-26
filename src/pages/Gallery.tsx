@@ -51,7 +51,7 @@ const Gallery = () => {
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <h1 className="text-4xl sm:text-5xl font-bold">Product Gallery</h1>
             <p className="text-xl text-muted-foreground">
-              Explore our premium diamond cutting blades in detail. See the quality, precision, and performance that sets AshCam apart across Richmond Hill, Mississauga, and Brampton.
+              Explore our premium diamond cutting blades in detail. See the quality, precision, and performance that sets AshCam apart across Toronto & GTA.
             </p>
             <Button asChild variant="hero" size="lg" className="group">
               <Link to="/products">
@@ -69,7 +69,7 @@ const Gallery = () => {
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold mb-4">Our Diamond Cutting Blades</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              High-quality diamond cutting blades designed for concrete, stone, and masonry applications.
+              High-quality diamond cutting blades designed for metals, tile, concrete, stone, and masonry applications.
             </p>
           </div>
           
