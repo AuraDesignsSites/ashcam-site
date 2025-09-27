@@ -58,11 +58,21 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Phone className="h-4 w-4 text-primary" />
-                <span className="text-muted-foreground">+1 647-519-2734</span>
+                <a 
+                  href="tel:+16475192734"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
+                  +1 647-519-2734
+                </a>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-primary" />
-                <span className="text-muted-foreground">AshCam1964@yahoo.com</span>
+                <a 
+                  href="mailto:AshCam1964@yahoo.com"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
+                  AshCam1964@yahoo.com
+                </a>
               </div>
               <div className="flex items-start space-x-3">
                 <MapPin className="h-4 w-4 text-primary mt-1" />

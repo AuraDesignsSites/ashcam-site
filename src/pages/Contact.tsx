@@ -188,7 +188,23 @@ const Contact = () => {
                         <item.icon className="h-6 w-6 text-primary mt-1" />
                         <div>
                           <h3 className="font-semibold mb-1">{item.title}</h3>
-                          <p className="text-foreground mb-1">{item.content}</p>
+                          {item.title === "Email" ? (
+                            <a 
+                              href={`mailto:${item.content}`}
+                              className="text-foreground mb-1 hover:text-primary transition-colors block"
+                            >
+                              {item.content}
+                            </a>
+                          ) : item.title === "Phone" ? (
+                            <a 
+                              href={`tel:${item.content}`}
+                              className="text-foreground mb-1 hover:text-primary transition-colors block"
+                            >
+                              {item.content}
+                            </a>
+                          ) : (
+                            <p className="text-foreground mb-1">{item.content}</p>
+                          )}
                           <p className="text-sm text-muted-foreground">{item.subtitle}</p>
                         </div>
                       </div>
