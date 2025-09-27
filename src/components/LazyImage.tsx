@@ -6,9 +6,10 @@ interface LazyImageProps {
   className?: string;
   placeholder?: string;
   onLoad?: () => void;
+  onClick?: () => void;
 }
 
-const LazyImage = ({ src, alt, className = '', placeholder, onLoad }: LazyImageProps) => {
+const LazyImage = ({ src, alt, className = '', placeholder, onLoad, onClick }: LazyImageProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const imgRef = useRef<HTMLDivElement>(null);
@@ -61,6 +62,7 @@ const LazyImage = ({ src, alt, className = '', placeholder, onLoad }: LazyImageP
             isLoaded ? 'opacity-100' : 'opacity-0'
           }`}
           onLoad={handleImageLoad}
+          onClick={onClick}
           loading="lazy"
         />
       )}

@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle, RotateCcw } from "lucide-react";
+import { ArrowRight, CheckCircle, RotateCcw, X } from "lucide-react";
 import Layout from "@/components/Layout";
 import LazyImage from "@/components/LazyImage";
 import { Seo } from "@/lib/seo";
@@ -11,9 +11,13 @@ import sawBlades from "@/assets/diamond-blade-collection.png";
 import sixAndHalfBlade from "@/assets/diamond-blade-6.5-inch.png";
 import sevenAndQuarterBlade from "@/assets/diamond-blade-7.25-inch.png";
 import fourteenInchBlade from "@/assets/diamond-blade-14-inch.png";
+import sawBladeMetal from "@/assets/saw-blade-tct-metal.jpeg";
+import sawBladeAlum from "@/assets/saw-blade-tct-alum.jpeg";
+import sawBladeWood from "@/assets/saw-blade-tct-wood.jpeg";
 
 const Products = () => {
   const [flippedCards, setFlippedCards] = useState<Set<number>>(new Set());
+  const [zoomedImage, setZoomedImage] = useState<{ title: string; image: string } | null>(null);
 
   const products = [
     {
@@ -22,8 +26,8 @@ const Products = () => {
       description: "High-performance T.C.T (Tungsten Carbide Tipped) saw blade engineered for cutting steel, rebar, structural steel, and ferrous metals. Available in 6½, 7¼, and 14 inch sizes. Perfect for metal fabrication, pipe cutting, and structural steel work. Designed for durability and precision in metal cutting applications.",
       size: "6½, 7¼, 14 inches",
       features: ["Tungsten Carbide Tips", "High-Speed Steel", "Precision Cutting"],
-      price: "Starting from $35",
-      image: sixAndHalfBlade
+      price: "Starting from $45",
+      image: sawBladeMetal
     },
     {
       name: "T.C.T Saw Blade",
@@ -32,7 +36,7 @@ const Products = () => {
       size: "6½, 7¼, 14 inches",
       features: ["Aluminum-Specific Design", "Non-Ferrous Metal Cutting", "Clean Cuts"],
       price: "Starting from $40",
-      image: sevenAndQuarterBlade
+      image: sawBladeAlum
     },
     {
       name: "T.C.T Saw Blade",
@@ -40,8 +44,8 @@ const Products = () => {
       description: "Professional T.C.T saw blade optimized for cutting hardwood, softwood, plywood, and engineered wood products. Available in 6½, 7¼, and 14 inch sizes. Perfect for woodworking, construction, and furniture making. Designed for smooth cuts and minimal tear-out on wood materials.",
       size: "6½, 7¼, 14 inches",
       features: ["Wood-Optimized Teeth", "Anti-Kickback Design", "Smooth Cuts"],
-      price: "Starting from $85",
-      image: fourteenInchBlade
+      price: "Starting from $15",
+      image: sawBladeWood
     }
   ];
 
@@ -226,7 +230,7 @@ const Products = () => {
                                   }}
                                 >
                                   <RotateCcw className="h-3 w-3 mr-1" />
-                                  View Image
+                                  View Specs
                                 </Button>
                               )}
                             </div>
@@ -240,11 +244,14 @@ const Products = () => {
                       <div className="flip-card-back">
                         <Card className="border border-border h-full flex flex-col">
                           <div className="relative w-full h-full bg-background rounded-lg overflow-hidden p-6 flex flex-col">
-                            <div className="flex-1 flex items-center justify-center">
+                            <div 
+                              className="flex-1 flex items-center justify-center cursor-pointer hover:opacity-90 transition-opacity"
+                              onClick={() => setZoomedImage({ title: product.name, image: product.image })}
+                            >
                               <LazyImage 
                                 src={product.image} 
                                 alt={`${product.name} - ${product.size}`}
-                                className="max-w-full max-h-full"
+                                className={`max-w-full max-h-full ${index === 2 ? 'object-contain' : 'object-cover'}`}
                                 placeholder="Loading product image..."
                               />
                             </div>
@@ -410,6 +417,33 @@ const Products = () => {
           </div>
         </div>
       </section>
+
+      {/* Full-screen Image Zoom Modal */}
+      {zoomedImage && (
+        <div 
+          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
+          onClick={() => setZoomedImage(null)}
+        >
+          <div className="relative max-w-7xl max-h-full">
+            <img 
+              src={zoomedImage.image} 
+              alt={zoomedImage.title}
+              className="max-w-full max-h-full object-contain"
+            />
+            <Button
+              variant="ghost"
+              size="icon"
+              className="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white hover:text-white"
+              onClick={(e) => {
+                e.stopPropagation();
+                setZoomedImage(null);
+              }}
+            >
+              <X className="h-6 w-6" />
+            </Button>
+          </div>
+        </div>
+      )}
     </Layout>
   );
 };

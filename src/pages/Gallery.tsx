@@ -45,15 +45,15 @@ const Gallery = () => {
       image: stockPhoto6
     },
     {
-      title: "6½ Inch Diamond Blade",
+      title: "6½ Inch T.C.T Blade",
       image: sixAndHalfBlade
     },
     {
-      title: "7¼ Inch Diamond Blade", 
+      title: "7¼ Inch T.C.T Blade", 
       image: sevenAndQuarterBlade
     },
     {
-      title: "14 Inch Diamond Blade",
+      title: "14 Inch T.C.T Blade",
       image: fourteenInchBlade
     }
   ];
@@ -82,9 +82,9 @@ const Gallery = () => {
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4">Our Diamond Cutting Blades</h2>
+            <h2 className="text-3xl font-bold mb-4">Our T.C.T Cutting Blades</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              High-quality diamond cutting blades designed for metals, tile, concrete, stone, and masonry applications.
+              High-quality T.C.T cutting blades designed for metals, aluminum, wood, and various cutting applications.
             </p>
           </div>
           
