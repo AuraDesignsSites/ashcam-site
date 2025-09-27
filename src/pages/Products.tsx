@@ -17,29 +17,29 @@ const Products = () => {
 
   const products = [
     {
-      name: "Diamond Blade Cutting Disc",
-      categories: ["Masonry & Concrete", "Metals", "Tile & Wood"],
-      description: "High-performance 6½ inch blade engineered for cutting concrete, stone, brick, masonry, steel, rebar, copper, aluminum, brass, ceramic tile, porcelain, marble, granite, and hardwood. Perfect for concrete slabs, metal fabrication, and flooring installation. Designed for durability and precision in compact cutting applications.",
-      size: "6½ inches",
-      features: ["Diamond Segments", "Wet/Dry Use", "Precision Cutting"],
+      name: "T.C.T Saw Blade",
+      categories: ["Metals & Steel"],
+      description: "High-performance T.C.T (Tungsten Carbide Tipped) saw blade engineered for cutting steel, rebar, structural steel, and ferrous metals. Available in 6½, 7¼, and 14 inch sizes. Perfect for metal fabrication, pipe cutting, and structural steel work. Designed for durability and precision in metal cutting applications.",
+      size: "6½, 7¼, 14 inches",
+      features: ["Tungsten Carbide Tips", "High-Speed Steel", "Precision Cutting"],
       price: "Starting from $35",
       image: sixAndHalfBlade
     },
     {
-      name: "Diamond Blade Cutting Disc",
-      categories: ["Masonry & Concrete", "Metals", "Tile & Wood"], 
-      description: "High-performance 7¼ inch blade engineered for cutting concrete, stone, brick, masonry, steel, rebar, copper, aluminum, brass, ceramic tile, porcelain, marble, granite, and hardwood. Ideal for stone countertops, pipe cutting, and countertop fabrication. Designed for durability and precision in medium-duty cutting applications.",
-      size: "7¼ inches",
-      features: ["Diamond Segments", "Wet/Dry Use", "Precision Cutting"],
+      name: "T.C.T Saw Blade",
+      categories: ["Aluminum"], 
+      description: "Specialized T.C.T saw blade designed for cutting aluminum, aluminum alloys, and non-ferrous metals. Available in 6½, 7¼, and 14 inch sizes. Ideal for aluminum fabrication, window frames, and aerospace applications. Engineered for clean cuts and extended blade life on aluminum materials.",
+      size: "6½, 7¼, 14 inches",
+      features: ["Aluminum-Specific Design", "Non-Ferrous Metal Cutting", "Clean Cuts"],
       price: "Starting from $40",
       image: sevenAndQuarterBlade
     },
     {
-      name: "Diamond Blade Cutting Disc",
-      categories: ["Masonry & Concrete", "Metals", "Tile & Wood"],
-      description: "High-performance 14 inch blade engineered for cutting concrete, stone, brick, masonry, steel, rebar, copper, aluminum, brass, ceramic tile, porcelain, marble, granite, and hardwood. Perfect for brick walls, structural steel work, and woodworking projects. Designed for durability and precision in heavy-duty cutting applications.",
-      size: "14 inches",
-      features: ["Diamond Segments", "Wet/Dry Use", "Precision Cutting"],
+      name: "T.C.T Saw Blade",
+      categories: ["Wood"],
+      description: "Professional T.C.T saw blade optimized for cutting hardwood, softwood, plywood, and engineered wood products. Available in 6½, 7¼, and 14 inch sizes. Perfect for woodworking, construction, and furniture making. Designed for smooth cuts and minimal tear-out on wood materials.",
+      size: "6½, 7¼, 14 inches",
+      features: ["Wood-Optimized Teeth", "Anti-Kickback Design", "Smooth Cuts"],
       price: "Starting from $85",
       image: fourteenInchBlade
     }
@@ -58,9 +58,9 @@ const Products = () => {
   };
 
   const categoryColors: Record<string, string> = {
-    "Masonry & Concrete": "bg-orange-100 text-orange-800",
-    "Metals": "bg-gray-100 text-gray-800",
-    "Tile & Wood": "bg-green-100 text-green-800"
+    "Metals & Steel": "bg-gray-100 text-gray-800",
+    "Aluminum": "bg-blue-100 text-blue-800",
+    "Wood": "bg-green-100 text-green-800"
   };
 
   // Generate Product schema for each product
@@ -186,10 +186,18 @@ const Products = () => {
                         </CardHeader>
                         <CardContent className="flex-1 flex flex-col space-y-4">
                           <div className="text-left">
-                            <h4 className="font-medium mb-2">Size:</h4>
-                            <Badge variant="outline" className="text-sm">
-                              {product.size}
-                            </Badge>
+                            <h4 className="font-medium mb-2">Available Sizes:</h4>
+                            <div className="flex flex-wrap gap-2">
+                              <Badge variant="outline" className="text-sm">
+                                6½ inches
+                              </Badge>
+                              <Badge variant="outline" className="text-sm">
+                                7¼ inches
+                              </Badge>
+                              <Badge variant="outline" className="text-sm">
+                                14 inches
+                              </Badge>
+                            </div>
                           </div>
                           
                           <div className="flex-1 min-h-0">
