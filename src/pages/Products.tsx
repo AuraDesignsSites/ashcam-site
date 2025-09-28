@@ -350,21 +350,21 @@ const Products = () => {
                 company: "Thompson Construction Ltd.",
                 location: "Toronto, ON",
                 rating: 5,
-                review: "The 14-inch diamond blade has been a game-changer for our concrete cutting projects. Clean cuts every time and lasts much longer than other brands we've tried."
+                review: "The 14-inch TCT blade has been a game-changer for our concrete cutting projects. Clean cuts every time and lasts much longer than other brands we've tried."
               },
               {
                 name: "Sarah Chen",
                 company: "Precision Masonry",
                 location: "Vancouver, BC", 
                 rating: 5,
-                review: "Excellent quality and great customer service. The 7¼ inch blade is perfect for our stone work. Highly recommend AshCam for any masonry cutting needs."
+                review: "Excellent quality and great customer service. The 7¼ inch blade is perfect for our metal work. Highly recommend AshCam for any metal cutting needs."
               },
               {
                 name: "David Rodriguez",
                 company: "Rodriguez Renovations",
                 location: "Montreal, QC",
                 rating: 5,
-                review: "Fast delivery and the 6½ inch blade works perfectly for tight spaces. Great value for money and the precision is exactly what we needed for our renovation projects."
+                review: "Fast delivery and the 6½ inch TCT blade works perfectly for wood cutting. Great value for money and the precision is exactly what we needed for our renovation projects."
               }
             ].map((testimonial, index) => (
               <Card key={index} className="border border-border hover-lift">
