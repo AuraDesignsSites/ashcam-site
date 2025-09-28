@@ -72,15 +72,15 @@ export function Seo({
 export function HomeSeo() {
   return (
     <Seo
-      title="Industrial Diamond Cutting Tools in Toronto & GTA"
-      description="Premium diamond blades and masonry cutting tools with fast delivery across Toronto and the GTA — including Vaughan, Markham, Richmond Hill, Mississauga, and Brampton."
+      title="Industrial T.C.T Cutting Tools in Toronto & GTA"
+      description="Premium T.C.T blades and masonry cutting tools with fast delivery across Toronto and the GTA — including Vaughan, Markham, Richmond Hill, Mississauga, and Brampton."
       keywords={[
-        "Toronto diamond blades",
+        "Toronto T.C.T blades",
         "GTA cutting tools", 
         "concrete saw blades Toronto",
         "masonry blades GTA",
         "industrial cutting tools Toronto",
-        "diamond blades Vaughan",
+        "T.C.T blades Vaughan",
         "Markham cutting tools",
         "Richmond Hill blades"
       ]}
@@ -97,7 +97,7 @@ export function ContactSeo() {
       description="Get a quote or technical advice. Serving Toronto, Vaughan, Markham, Richmond Hill, Mississauga, Brampton, and the GTA."
       keywords={[
         "contact cutting tools Toronto",
-        "quote diamond blades GTA",
+        "quote T.C.T blades GTA",
         "Toronto industrial tools supplier"
       ]}
       canonical="/contact"
@@ -108,14 +108,14 @@ export function ContactSeo() {
 export function ServiceAreasSeo() {
   return (
     <Seo
-      title="Service Areas — Toronto & GTA Diamond Cutting Tools"
+      title="Service Areas — Toronto & GTA T.C.T Cutting Tools"
       description="Delivery and expert support across Toronto, Vaughan, Markham, Richmond Hill, Mississauga, Brampton, and the GTA."
       keywords={[
-        "Toronto diamond blades",
+        "Toronto T.C.T blades",
         "GTA cutting tools",
         "Markham concrete saw blades",
         "Vaughan masonry blades",
-        "Richmond Hill diamond blades"
+        "Richmond Hill T.C.T blades"
       ]}
       canonical="/service-areas"
     />

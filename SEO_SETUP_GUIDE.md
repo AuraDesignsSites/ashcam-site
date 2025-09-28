@@ -140,19 +140,19 @@ VITE_BING_SITE_VERIFICATION=your_bing_verification_code
 2. **Local Rankings**: Search Console > Performance > Queries
 3. **Core Web Vitals**: Search Console > Experience > Core Web Vitals
 4. **Conversion Rate**: Contact form submissions from organic traffic
-5. **Local Pack Rankings**: "diamond cutting tools Toronto" searches
+5. **Local Pack Rankings**: "T.C.T cutting tools Toronto" searches
 
 ## 📝 CONTENT RECOMMENDATIONS
 
 ### Blog Topics for SEO Content
-1. "How to Choose the Right Diamond Blade for Concrete Cutting"
+1. "How to Choose the Right T.C.T Blade for Concrete Cutting"
 2. "Toronto Construction Projects: Cutting Tool Safety Tips"
-3. "GTA Masonry Work: Best Practices for Diamond Blades"
+3. "GTA Masonry Work: Best Practices for T.C.T Blades"
 4. "Concrete Cutting in Vaughan: What You Need to Know"
-5. "Markham Construction: Diamond Blade Maintenance Guide"
+5. "Markham Construction: T.C.T Blade Maintenance Guide"
 
 ### Local Landing Pages (Future)
-- /diamond-blades-toronto
+- /tct-blades-toronto
 - /concrete-cutting-vaughan
 - /masonry-tools-markham
 - /construction-supplies-richmond-hill

@@ -1,6 +1,6 @@
 # AshCam Cutting Solutions - Website
 
-A professional website for AshCam Cutting Solutions Ltd, specializing in premium diamond blades and masonry cutting tools across Toronto and the GTA.
+A professional website for AshCam Cutting Solutions Ltd, specializing in premium T.C.T blades and masonry cutting tools across Toronto and the GTA.
 
 ## 🏢 About AshCam
 

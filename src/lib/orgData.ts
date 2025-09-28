@@ -13,7 +13,7 @@ export const REGIONS = ["GTA", "Peel Region", "York Region", "Durham Region", "H
 // Organization data for JSON-LD
 export const organizationData = {
   name: "AshCam Cutting Solutions Ltd",
-  description: "Premium diamond blades and masonry cutting tools with fast delivery across Toronto and the GTA",
+  description: "Premium T.C.T blades and masonry cutting tools with fast delivery across Toronto and the GTA",
   url: import.meta.env.VITE_SITE_URL || "https://ashcamcutting.com",
   logo: import.meta.env.VITE_SITE_URL ? `${import.meta.env.VITE_SITE_URL}/src/assets/ashcam-logo.png` : "/src/assets/ashcam-logo.png",
   address: {
@@ -56,7 +56,7 @@ export function localBusinessLd() {
       "email": organizationData.contactPoint.email
     },
     "areaServed": organizationData.areaServed,
-    "serviceType": "Industrial Cutting Tools and Diamond Blades",
+    "serviceType": "Industrial Cutting Tools and T.C.T Blades",
     "priceRange": "$$"
   };
 }

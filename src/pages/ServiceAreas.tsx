@@ -19,7 +19,7 @@ const ServiceAreasPage = () => {
               Service Areas — Toronto & GTA
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
-              We deliver premium diamond cutting tools and provide expert support across Toronto, Vaughan, Markham, Richmond Hill, Mississauga, Brampton, and throughout the Greater Toronto Area.
+              We deliver premium T.C.T cutting tools and provide expert support across Toronto, Vaughan, Markham, Richmond Hill, Mississauga, Brampton, and throughout the Greater Toronto Area.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg">

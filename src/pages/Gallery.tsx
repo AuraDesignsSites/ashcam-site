@@ -1,9 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, X } from "lucide-react";
+import { ArrowRight, X, Play } from "lucide-react";
 import Layout from "@/components/Layout";
 import LazyImage from "@/components/LazyImage";
-import { useState } from "react";
+import { useState, lazy, Suspense } from "react";
 import sixAndHalfBlade from "@/assets/diamond-blade-6.5-inch.png";
 import sevenAndQuarterBlade from "@/assets/diamond-blade-7.25-inch.png";
 import fourteenInchBlade from "@/assets/diamond-blade-14-inch.png";
@@ -13,12 +13,16 @@ import stockPhoto3 from "@/assets/stock-photo3.jpg";
 import stockPhoto4 from "@/assets/stock-photo4.png";
 import stockPhoto5 from "@/assets/stock-photo5.jpg";
 import stockPhoto6 from "@/assets/stock-photo6.jpg";
+import stockVideo1 from "@/assets/stock-video1.mov";
+
+// Lazy load the video component for better performance
+const LazyVideo = lazy(() => import("@/components/LazyVideo"));
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<{ title: string; image: string } | null>(null);
   const [imageLoaded, setImageLoaded] = useState(false);
 
-  // Product gallery images - showcasing the actual diamond cutting blades
+  // Product gallery images - showcasing the actual T.C.T cutting blades
   const productImages = [
     {
       title: "Professional Work Environment",
@@ -66,7 +70,7 @@ const Gallery = () => {
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <h1 className="text-4xl sm:text-5xl font-bold">Product Gallery</h1>
             <p className="text-xl text-muted-foreground">
-              Explore our premium diamond cutting blades in detail. See the quality, precision, and performance that sets AshCam apart across Toronto & GTA.
+              Explore our premium T.C.T cutting blades in detail. See the quality, precision, and performance that sets AshCam apart across Toronto & GTA.
             </p>
             <Button asChild variant="hero" size="lg" className="group">
               <Link to="/products">
@@ -74,6 +78,36 @@ const Gallery = () => {
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Video Section */}
+      <section className="py-20 bg-warm-off-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold mb-4">See Our Tools in Action</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Watch our T.C.T cutting blades perform in real-world applications. Experience the precision and quality that sets AshCam apart.
+            </p>
+          </div>
+          
+          <div className="max-w-4xl mx-auto">
+            <Suspense fallback={
+              <div className="flex items-center justify-center w-full h-96 bg-muted rounded-lg">
+                <div className="text-center">
+                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-2"></div>
+                  <p className="text-sm text-muted-foreground">Loading video...</p>
+                </div>
+              </div>
+            }>
+              <LazyVideo 
+                src={stockVideo1}
+                title="T.C.T Cutting Blades in Action"
+                className="w-full h-96 rounded-lg shadow-lg"
+                placeholder="Loading video..."
+              />
+            </Suspense>
           </div>
         </div>
       </section>
@@ -116,7 +150,7 @@ const Gallery = () => {
           <div className="max-w-3xl mx-auto space-y-6">
             <h2 className="text-3xl font-bold text-white">Ready to Order?</h2>
             <p className="text-xl text-white/90">
-              Contact us for expert advice, detailed specifications, and competitive pricing on our diamond cutting blades.
+              Contact us for expert advice, detailed specifications, and competitive pricing on our T.C.T cutting blades.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild variant="secondary" size="lg">

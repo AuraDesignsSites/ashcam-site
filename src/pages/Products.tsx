@@ -110,13 +110,13 @@ const Products = () => {
   return (
     <Layout>
       <Seo
-        title="Diamond Cutting Blades — Toronto & GTA"
-        description="Professional diamond cutting blades for concrete, masonry, metal, and tile cutting across Toronto, Vaughan, Markham, Richmond Hill, Mississauga, and Brampton."
+        title="T.C.T Cutting Blades — Toronto & GTA"
+        description="Professional T.C.T cutting blades for concrete, masonry, metal, and tile cutting across Toronto, Vaughan, Markham, Richmond Hill, Mississauga, and Brampton."
         keywords={[
-          "diamond cutting blades Toronto",
+          "T.C.T cutting blades Toronto",
           "concrete saw blades GTA", 
           "metal cutting tools Vaughan",
-          "diamond blades Markham",
+          "T.C.T blades Markham",
           "cutting discs Richmond Hill",
           "steel cutting blades",
           "aluminum cutting tools",
@@ -132,7 +132,7 @@ const Products = () => {
             <div className="space-y-6">
               <h1 className="text-4xl sm:text-5xl font-bold">Our Products</h1>
               <p className="text-xl text-muted-foreground">
-                Professional diamond cutting blades engineered for precision, 
+                Professional T.C.T cutting blades engineered for precision, 
                 performance, and durability in cutting concrete, masonry, metal, and tile applications across Toronto & GTA.
               </p>
               <Button asChild variant="hero" size="lg" className="group">
@@ -350,7 +350,7 @@ const Products = () => {
                 company: "Thompson Construction Ltd.",
                 location: "Toronto, ON",
                 rating: 5,
-                review: "The 14-inch diamond blade has been a game-changer for our concrete cutting projects. Clean cuts every time and lasts much longer than other brands we've tried."
+                review: "The 14-inch T.C.T blade has been a game-changer for our concrete cutting projects. Clean cuts every time and lasts much longer than other brands we've tried."
               },
               {
                 name: "Sarah Chen",
