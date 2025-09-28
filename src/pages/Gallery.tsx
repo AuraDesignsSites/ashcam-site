@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, X, Play } from "lucide-react";
 import Layout from "@/components/Layout";
 import LazyImage from "@/components/LazyImage";
-import { useState, lazy, Suspense } from "react";
+import { useState } from "react";
 import sixAndHalfBlade from "@/assets/diamond-blade-6.5-inch.png";
 import sevenAndQuarterBlade from "@/assets/diamond-blade-7.25-inch.png";
 import fourteenInchBlade from "@/assets/diamond-blade-14-inch.png";
@@ -13,14 +13,17 @@ import stockPhoto3 from "@/assets/stock-photo3.jpg";
 import stockPhoto4 from "@/assets/stock-photo4.png";
 import stockPhoto5 from "@/assets/stock-photo5.jpg";
 import stockPhoto6 from "@/assets/stock-photo6.jpg";
+import stockBlade1 from "@/assets/stock-blade1.png";
+import stockBlade2 from "@/assets/stock-blade2.jpeg";
 import stockVideo1 from "@/assets/stock-video1.mov";
+import stockVideo2 from "@/assets/stock-video2.mov";
 
-// Lazy load the video component for better performance
-const LazyVideo = lazy(() => import("@/components/LazyVideo"));
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<{ title: string; image: string } | null>(null);
   const [imageLoaded, setImageLoaded] = useState(false);
+  const [video1Playing, setVideo1Playing] = useState(false);
+  const [video2Playing, setVideo2Playing] = useState(false);
 
   // Product gallery images - showcasing the actual T.C.T cutting blades
   const productImages = [
@@ -59,6 +62,14 @@ const Gallery = () => {
     {
       title: "14 Inch T.C.T Blade",
       image: fourteenInchBlade
+    },
+    {
+      title: "Professional T.C.T Blade Collection",
+      image: stockBlade1
+    },
+    {
+      title: "High-Quality Cutting Blade",
+      image: stockBlade2
     }
   ];
 
@@ -92,22 +103,68 @@ const Gallery = () => {
             </p>
           </div>
           
-          <div className="max-w-4xl mx-auto">
-            <Suspense fallback={
-              <div className="flex items-center justify-center w-full h-96 bg-muted rounded-lg">
-                <div className="text-center">
-                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-2"></div>
-                  <p className="text-sm text-muted-foreground">Loading video...</p>
-                </div>
-              </div>
-            }>
-              <LazyVideo 
+          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="relative group">
+              <video
                 src={stockVideo1}
-                title="T.C.T Cutting Blades in Action"
-                className="w-full h-96 rounded-lg shadow-lg"
-                placeholder="Loading video..."
-              />
-            </Suspense>
+                className="w-full h-96 rounded-lg shadow-lg object-cover"
+                controls
+                preload="metadata"
+                poster=""
+                onPlay={() => setVideo1Playing(true)}
+                onPause={() => setVideo1Playing(false)}
+                onEnded={() => setVideo1Playing(false)}
+              >
+                Your browser does not support the video tag.
+              </video>
+              {!video1Playing && (
+                <div 
+                  className="absolute inset-0 flex items-center justify-center cursor-pointer"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    const video = e.currentTarget.parentElement?.querySelector('video') as HTMLVideoElement;
+                    if (video) {
+                      video.play();
+                    }
+                  }}
+                >
+                  <div className="bg-black/50 rounded-full p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <Play className="h-8 w-8 text-white" />
+                  </div>
+                </div>
+              )}
+            </div>
+            
+            <div className="relative group">
+              <video
+                src={stockVideo2}
+                className="w-full h-96 rounded-lg shadow-lg object-cover"
+                controls
+                preload="metadata"
+                poster=""
+                onPlay={() => setVideo2Playing(true)}
+                onPause={() => setVideo2Playing(false)}
+                onEnded={() => setVideo2Playing(false)}
+              >
+                Your browser does not support the video tag.
+              </video>
+              {!video2Playing && (
+                <div 
+                  className="absolute inset-0 flex items-center justify-center cursor-pointer"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    const video = e.currentTarget.parentElement?.querySelector('video') as HTMLVideoElement;
+                    if (video) {
+                      video.play();
+                    }
+                  }}
+                >
+                  <div className="bg-black/50 rounded-full p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <Play className="h-8 w-8 text-white" />
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </section>

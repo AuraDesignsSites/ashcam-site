@@ -31,6 +31,7 @@ const LazyVideo = ({
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
+          console.log('Video coming into view, setting isInView to true');
           setIsInView(true);
           observer.disconnect();
         }
@@ -63,6 +64,12 @@ const LazyVideo = ({
     video.addEventListener('ended', handleEnded);
     document.addEventListener('fullscreenchange', handleFullscreenChange);
 
+    // Force load the video when it comes into view
+    if (video.src && video.readyState === 0) {
+      console.log('Loading video:', video.src);
+      video.load();
+    }
+
     return () => {
       video.removeEventListener('loadeddata', handleLoadedData);
       video.removeEventListener('play', handlePlay);
@@ -72,14 +79,22 @@ const LazyVideo = ({
     };
   }, [isInView]);
 
-  const togglePlay = () => {
+  const togglePlay = async () => {
     const video = videoRef.current;
     if (!video) return;
 
-    if (isPlaying) {
-      video.pause();
-    } else {
-      video.play();
+    try {
+      if (isPlaying) {
+        video.pause();
+      } else {
+        // Ensure video is loaded before playing
+        if (video.readyState < 2) {
+          video.load();
+        }
+        await video.play();
+      }
+    } catch (error) {
+      console.error('Error playing video:', error);
     }
   };
 
