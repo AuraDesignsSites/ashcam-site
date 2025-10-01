@@ -31,7 +31,6 @@ const LazyVideo = ({
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          console.log('Video coming into view, setting isInView to true');
           setIsInView(true);
           observer.disconnect();
         }
@@ -66,7 +65,6 @@ const LazyVideo = ({
 
     // Force load the video when it comes into view
     if (video.src && video.readyState === 0) {
-      console.log('Loading video:', video.src);
       video.load();
     }
 
@@ -94,7 +92,7 @@ const LazyVideo = ({
         await video.play();
       }
     } catch (error) {
-      console.error('Error playing video:', error);
+      // Handle video play error silently
     }
   };
 

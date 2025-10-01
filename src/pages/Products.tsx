@@ -124,6 +124,10 @@ const Products = () => {
         ]}
         canonical="/products"
         structuredData={productSchemas}
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Products", url: "/products" }
+        ]}
       />
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-background to-surface-light">

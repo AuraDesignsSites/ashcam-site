@@ -3,8 +3,11 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { Target, Users, Trophy, ArrowRight } from "lucide-react";
 import Layout from "@/components/Layout";
+import { AboutSeo } from "@/lib/seo";
+
 const About = () => {
   return <Layout>
+      <AboutSeo />
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-background to-surface-light">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
