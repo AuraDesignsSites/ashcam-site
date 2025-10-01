@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "./ui/button";
 import { Menu, X } from "lucide-react";
-import ashcamLogo from "@/assets/ashcam-logo.png";
+import ashcamLogo from "@/assets/ashcam-logoV2.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

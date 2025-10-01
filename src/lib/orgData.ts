@@ -15,7 +15,7 @@ export const organizationData = {
   name: "AshCam Cutting Solutions Ltd",
   description: "Premium T.C.T blades and masonry cutting tools with fast delivery across Toronto and the GTA",
   url: import.meta.env.VITE_SITE_URL || "https://ashcamcutting.com",
-  logo: import.meta.env.VITE_SITE_URL ? `${import.meta.env.VITE_SITE_URL}/src/assets/ashcam-logo.png` : "/src/assets/ashcam-logo.png",
+  logo: import.meta.env.VITE_SITE_URL ? `${import.meta.env.VITE_SITE_URL}/src/assets/ashcam-logoV2.png` : "/src/assets/ashcam-logoV2.png",
   address: {
     streetAddress: "385 Osler Street, Unit 510",
     addressLocality: "Toronto",

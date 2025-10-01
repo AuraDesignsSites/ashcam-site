@@ -25,7 +25,7 @@ export function Seo({
   const siteUrl = import.meta.env.VITE_SITE_URL || "https://ashcamcutting.com";
   const fullTitle = title.includes("AshCam") ? title : `${title} | AshCam Cutting Solutions`;
   const canonicalUrl = canonical ? `${siteUrl}${canonical}` : siteUrl;
-  const ogImageUrl = ogImage ? `${siteUrl}${ogImage}` : `${siteUrl}/src/assets/ashcam-logo.png`;
+  const ogImageUrl = ogImage ? `${siteUrl}${ogImage}` : `${siteUrl}/src/assets/ashcam-logoV2.png`;
 
   // Limit keywords to 12 items max
   const limitedKeywords = keywords ? keywords.slice(0, 12) : [];
