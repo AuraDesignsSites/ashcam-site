@@ -107,8 +107,8 @@ const Products = () => {
   return (
     <Layout>
       <Seo
-        title="T.C.T Cutting Blades — Toronto & GTA"
-        description="Professional T.C.T cutting blades for concrete, masonry, metal, and tile cutting across Toronto, Vaughan, Markham, Richmond Hill, Mississauga, and Brampton."
+        title="T.C.T Cutting Blades — Toronto & GTA | AshCam"
+        description="Professional T.C.T cutting blades for concrete, masonry, metal, and tile cutting across Toronto, Vaughan, Markham, and GTA."
         keywords={[
           "T.C.T cutting blades Toronto",
           "concrete saw blades GTA", 
