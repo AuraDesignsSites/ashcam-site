@@ -27,8 +27,11 @@ const Header = () => {
           <Link to="/" className="flex items-center">
             <img 
               src={ashcamLogo} 
-              alt="AshCam Cutting Solutions" 
+              alt="AshCam Cutting Solutions - Professional T.C.T Cutting Tools Toronto" 
               className="h-16 w-auto object-contain"
+              width="200"
+              height="64"
+              loading="eager"
             />
           </Link>
 

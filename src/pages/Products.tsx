@@ -149,6 +149,8 @@ const Products = () => {
                 alt="Professional saw blades collection — Vaughan masonry work" 
                 className="w-full rounded-lg shadow-lg"
                 placeholder="Loading product collection..."
+                width={600}
+                height={400}
               />
             </div>
           </div>

@@ -47,6 +47,9 @@ const Index = () => {
                   alt="Professional workshop with cutting tools — Toronto jobsite" 
                   className="w-full h-[400px]"
                   placeholder="Loading workshop image..."
+                  width={800}
+                  height={400}
+                  priority={true}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
               </div>
@@ -128,6 +131,8 @@ const Index = () => {
                 alt="Collection of professional saw blades — GTA construction" 
                 className="w-full rounded-lg shadow-lg"
                 placeholder="Loading product collection..."
+                width={600}
+                height={400}
               />
             </div>
           </div>

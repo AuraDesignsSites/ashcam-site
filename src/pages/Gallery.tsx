@@ -112,6 +112,9 @@ const Gallery = () => {
                 controls
                 preload="metadata"
                 poster=""
+                width={800}
+                height={384}
+                aria-label="T.C.T cutting blade demonstration video"
                 onPlay={() => setVideo1Playing(true)}
                 onPause={() => setVideo1Playing(false)}
                 onEnded={() => setVideo1Playing(false)}
@@ -143,6 +146,9 @@ const Gallery = () => {
                 controls
                 preload="metadata"
                 poster=""
+                width={800}
+                height={384}
+                aria-label="Professional cutting tools demonstration video"
                 onPlay={() => setVideo2Playing(true)}
                 onPause={() => setVideo2Playing(false)}
                 onEnded={() => setVideo2Playing(false)}

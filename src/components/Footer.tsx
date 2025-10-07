@@ -12,8 +12,11 @@ const Footer = () => {
             <div className="flex items-center space-x-3 mb-4">
               <img 
                 src={ashcamLogo} 
-                alt="AshCam Cutting Solutions" 
+                alt="AshCam Cutting Solutions - Professional T.C.T Cutting Tools Toronto" 
                 className="h-12 w-auto object-contain"
+                width="150"
+                height="48"
+                loading="lazy"
               />
               <div>
                 <span className="text-base font-bold">AshCam Cutting Solutions Ltd.</span>

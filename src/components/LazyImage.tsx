@@ -7,9 +7,12 @@ interface LazyImageProps {
   placeholder?: string;
   onLoad?: () => void;
   onClick?: () => void;
+  width?: number;
+  height?: number;
+  priority?: boolean;
 }
 
-const LazyImage = ({ src, alt, className = '', placeholder, onLoad, onClick }: LazyImageProps) => {
+const LazyImage = ({ src, alt, className = '', placeholder, onLoad, onClick, width, height, priority = false }: LazyImageProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const imgRef = useRef<HTMLDivElement>(null);
@@ -63,7 +66,10 @@ const LazyImage = ({ src, alt, className = '', placeholder, onLoad, onClick }: L
           }`}
           onLoad={handleImageLoad}
           onClick={onClick}
-          loading="lazy"
+          loading={priority ? "eager" : "lazy"}
+          width={width}
+          height={height}
+          decoding="async"
         />
       )}
     </div>
