@@ -26,7 +26,7 @@ const About = () => {
           <div className="max-w-5xl mx-auto">
             <div className="bg-primary/5 border border-primary/20 rounded-2xl p-8 md:p-12">
               <div className="text-center space-y-6 mb-8">
-                <h2 className="text-4xl font-bold text-primary">About AshCam Cutting Solutions</h2>
+                <h2 className="text-4xl font-bold text-primary">Our Company Story</h2>
                 <div className="w-24 h-1 bg-primary mx-auto rounded-full"></div>
               </div>
               

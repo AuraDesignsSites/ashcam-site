@@ -108,7 +108,7 @@ const Products = () => {
     <Layout>
       <Seo
         title="T.C.T Cutting Blades — Toronto & GTA | AshCam"
-        description="Professional T.C.T cutting blades for concrete, masonry, metal, and tile cutting across Toronto, Vaughan, Markham, and GTA."
+        description="Professional T.C.T cutting blades for concrete, masonry, metal, and tile cutting across Toronto, Vaughan, Markham, and GTA. Order now!"
         keywords={[
           "T.C.T cutting blades Toronto",
           "concrete saw blades GTA", 
@@ -131,9 +131,9 @@ const Products = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <h1 className="text-4xl sm:text-5xl font-bold">Our Products</h1>
+              <h1 className="text-4xl sm:text-5xl font-bold">AshCam Cutting Solutions Products</h1>
               <p className="text-xl text-muted-foreground">
-                Professional T.C.T cutting blades engineered for precision, 
+                Professional tungsten carbide tipped cutting blades engineered for precision, 
                 performance, and durability in cutting concrete, masonry, metal, and tile applications across Toronto & GTA.
               </p>
               <Button asChild variant="hero" size="lg" className="group">

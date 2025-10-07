@@ -80,7 +80,7 @@ const Gallery = () => {
       <section className="py-20 bg-gradient-to-br from-background to-surface-light">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center space-y-6">
-            <h1 className="text-4xl sm:text-5xl font-bold">Product Gallery</h1>
+            <h1 className="text-4xl sm:text-5xl font-bold">AshCam Cutting Solutions Gallery</h1>
             <p className="text-xl text-muted-foreground">
               Explore our premium T.C.T cutting blades in detail. See the quality, precision, and performance that sets AshCam apart across Toronto & GTA.
             </p>

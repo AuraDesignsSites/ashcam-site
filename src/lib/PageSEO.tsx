@@ -22,15 +22,15 @@ const PAGE_TITLES = {
   'not-found': "Page Not Found — AshCam Cutting Solutions"
 };
 
-// Optimized descriptions under 160 characters
+// Optimized descriptions under 160 characters with CTAs and keywords
 const PAGE_DESCRIPTIONS = {
-  home: "Premium T.C.T blades and cutting tools with fast delivery across Toronto and the GTA. Professional cutting solutions since 1964.",
-  about: "Learn about AshCam Cutting Solutions Ltd, Toronto's trusted supplier of premium T.C.T cutting blades and industrial tools.",
-  products: "Professional T.C.T cutting blades for concrete, masonry, metal, and tile cutting across Toronto, Vaughan, Markham, and GTA.",
-  gallery: "View our premium T.C.T cutting blades in action. Professional cutting tools for concrete, masonry, metal, and tile applications.",
-  contact: "Contact AshCam Cutting Solutions for quotes and technical advice. Serving Toronto, Vaughan, Markham, and the GTA.",
-  'service-areas': "AshCam Cutting Solutions delivery and expert support across Toronto, Vaughan, Markham, and the GTA.",
-  'not-found': "The page you're looking for doesn't exist. Return to AshCam Cutting Solutions for premium T.C.T cutting tools."
+  home: "Premium T.C.T blades and cutting tools with fast delivery across Toronto and the GTA. Professional cutting solutions since 1964. Get a quote today!",
+  about: "Learn about AshCam Cutting Solutions Ltd, Toronto's trusted supplier of premium T.C.T cutting blades and industrial tools. Contact us for expert advice.",
+  products: "Professional T.C.T cutting blades for concrete, masonry, metal, and tile cutting across Toronto, Vaughan, Markham, and GTA. Order now!",
+  gallery: "View our premium T.C.T cutting blades in action. Professional cutting tools for concrete, masonry, metal, and tile applications. See our products!",
+  contact: "Contact AshCam Cutting Solutions for quotes and technical advice. Serving Toronto, Vaughan, Markham, and the GTA. Call us today!",
+  'service-areas': "AshCam Cutting Solutions delivery and expert support across Toronto, Vaughan, Markham, and the GTA. Fast local delivery available.",
+  'not-found': "The page you're looking for doesn't exist. Return to AshCam Cutting Solutions for premium T.C.T cutting tools across Toronto & GTA."
 };
 
 // Target keywords for each page

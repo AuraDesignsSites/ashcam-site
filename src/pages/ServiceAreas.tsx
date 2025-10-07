@@ -16,7 +16,7 @@ const ServiceAreasPage = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl sm:text-5xl font-bold mb-6">
-              Service Areas — Toronto & GTA
+              AshCam Cutting Solutions Service Areas — Toronto & GTA
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
               We deliver premium T.C.T cutting tools and provide expert support across Toronto, Vaughan, Markham, Richmond Hill, Mississauga, Brampton, and throughout the Greater Toronto Area.

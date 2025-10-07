@@ -49,7 +49,7 @@ const Contact = () => {
       <section className="py-20 bg-gradient-to-br from-background to-surface-light">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center space-y-6">
-            <h1 className="text-4xl sm:text-5xl font-bold">Contact Us</h1>
+            <h1 className="text-4xl sm:text-5xl font-bold">Contact AshCam Cutting Solutions</h1>
             <p className="text-xl text-muted-foreground">
               Get in touch with our cutting solutions experts. We're here to help with your project requirements.
             </p>
