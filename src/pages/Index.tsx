@@ -24,14 +24,14 @@ const Index = () => {
                   <span className="text-primary block">Professional Cutting Solutions</span>
                 </h1>
                 <p className="text-xl text-muted-foreground max-w-lg">
-                  AshCam Cutting Solutions is the leading provider of high-quality industrial cutting tools and saw blades across Toronto and the GTA. 
+                  AshCam Cutting Solutions is the leading provider of high-quality industrial cutting tools and saw blades across <Link to="/service-areas" className="text-primary hover:underline">Toronto and the GTA</Link>. 
                   Precision, reliability, and performance you can trust from our experienced team.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button asChild variant="hero" size="lg" className="group">
                   <Link to="/products">
-                    View Our Products
+                    View T.C.T Cutting Blades
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </Button>
@@ -119,7 +119,7 @@ const Index = () => {
                 ))}
               </div>
               <Button asChild variant="hero">
-                <Link to="/products">Explore All Products</Link>
+                <Link to="/products">Explore T.C.T Cutting Blades</Link>
               </Button>
             </div>
             <div className="relative">

@@ -82,7 +82,7 @@ const Gallery = () => {
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <h1 className="text-4xl sm:text-5xl font-bold">AshCam Cutting Solutions Gallery</h1>
             <p className="text-xl text-muted-foreground">
-              Explore our premium T.C.T cutting blades in detail. See the quality, precision, and performance that sets AshCam apart across Toronto & GTA.
+              Explore our premium T.C.T cutting blades in detail. See the quality, precision, and performance that sets AshCam apart across <Link to="/service-areas" className="text-primary hover:underline">Toronto & GTA</Link>.
             </p>
             <Button asChild variant="hero" size="lg" className="group">
               <Link to="/products">

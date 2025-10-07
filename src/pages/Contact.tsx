@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import Layout from "@/components/Layout";
 import { ContactSeo } from "@/lib/seo";
@@ -51,7 +52,7 @@ const Contact = () => {
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <h1 className="text-4xl sm:text-5xl font-bold">Contact AshCam Cutting Solutions</h1>
             <p className="text-xl text-muted-foreground">
-              Get in touch with our cutting solutions experts. We're here to help with your project requirements.
+              Get in touch with our cutting solutions experts. We're here to help with your project requirements across <Link to="/service-areas" className="text-primary hover:underline">Toronto and the GTA</Link>.
             </p>
           </div>
         </div>

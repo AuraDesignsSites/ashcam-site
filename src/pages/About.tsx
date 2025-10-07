@@ -88,7 +88,7 @@ const About = () => {
             <p className="text-xl text-muted-foreground leading-relaxed">
               To bring high-quality cutting solutions to Canadians at affordable prices while maintaining 
               unwavering reliability. We believe that professional-grade cutting tools should be accessible 
-              to every contractor, craftsman, and business owner across Canada, without compromising on 
+              to every contractor, craftsman, and business owner across <Link to="/service-areas" className="text-primary hover:underline">Toronto and the GTA</Link>, without compromising on 
               quality or performance.
             </p>
             <Button asChild variant="hero" size="lg" className="group">
