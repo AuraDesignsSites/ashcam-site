@@ -24,7 +24,7 @@ export function Seo({
   structuredData = [],
   breadcrumbs = []
 }: SeoProps) {
-  const siteUrl = import.meta.env.VITE_SITE_URL || "https://ashcamcutting.com";
+  const siteUrl = import.meta.env.VITE_SITE_URL || "https://ashcamcuttingsolution.ca";
   const fullTitle = title.includes("AshCam") ? title : `${title} | AshCam Cutting Solutions`;
   const canonicalUrl = canonical ? `${siteUrl}${canonical}` : siteUrl;
   const ogImageUrl = ogImage ? `${siteUrl}${ogImage}` : `${siteUrl}/src/assets/ashcam-logoV2.png`;
@@ -123,12 +123,16 @@ export function HomeSeo() {
 export function ContactSeo() {
   return (
     <Seo
-      title="Contact — Toronto & GTA Cutting Tool Experts"
-      description="Get a quote or technical advice. Serving Toronto, Vaughan, Markham, Richmond Hill, Mississauga, Brampton, and the GTA."
+      title="Contact AshCam Cutting Solutions — Toronto & GTA Cutting Tool Experts"
+      description="Contact AshCam Cutting Solutions for quotes and technical advice. Serving Toronto, Vaughan, Markham, Richmond Hill, Mississauga, Brampton, and the GTA."
       keywords={[
+        "contact AshCam Cutting Solutions",
+        "AshCam Cutting Solutions contact",
         "contact cutting tools Toronto",
         "quote T.C.T blades GTA",
-        "Toronto industrial tools supplier"
+        "Toronto industrial tools supplier",
+        "AshCam Cutting Solutions phone",
+        "AshCam Cutting Solutions email"
       ]}
       canonical="/contact"
     />
@@ -138,9 +142,12 @@ export function ContactSeo() {
 export function ServiceAreasSeo() {
   return (
     <Seo
-      title="Service Areas — Toronto & GTA T.C.T Cutting Tools"
-      description="Delivery and expert support across Toronto, Vaughan, Markham, Richmond Hill, Mississauga, Brampton, and the GTA."
+      title="AshCam Cutting Solutions Service Areas — Toronto & GTA T.C.T Cutting Tools"
+      description="AshCam Cutting Solutions delivery and expert support across Toronto, Vaughan, Markham, Richmond Hill, Mississauga, Brampton, and the GTA."
       keywords={[
+        "AshCam Cutting Solutions service areas",
+        "AshCam Cutting Solutions Toronto",
+        "AshCam Cutting Solutions GTA",
         "Toronto T.C.T blades",
         "GTA cutting tools",
         "Markham concrete saw blades",

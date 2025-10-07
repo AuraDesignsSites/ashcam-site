@@ -20,12 +20,12 @@ const Index = () => {
             <div className="space-y-8">
               <div className="space-y-4">
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-                  Professional
-                  <span className="text-primary block">Cutting Solutions</span>
+                  AshCam Cutting Solutions
+                  <span className="text-primary block">Professional Cutting Solutions</span>
                 </h1>
                 <p className="text-xl text-muted-foreground max-w-lg">
-                  Leading provider of high-quality industrial cutting tools and saw blades across Toronto and the GTA. 
-                  Precision, reliability, and performance you can trust.
+                  AshCam Cutting Solutions is the leading provider of high-quality industrial cutting tools and saw blades across Toronto and the GTA. 
+                  Precision, reliability, and performance you can trust from AshCam Cutting Solutions Ltd.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -59,9 +59,9 @@ const Index = () => {
       <section className="py-20 bg-warm-off-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4">Why Choose AshCam?</h2>
+            <h2 className="text-3xl font-bold mb-4">Why Choose AshCam Cutting Solutions?</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              We deliver precision cutting solutions with unmatched quality and reliability.
+              AshCam Cutting Solutions delivers precision cutting solutions with unmatched quality and reliability across Toronto and the GTA.
             </p>
           </div>
           

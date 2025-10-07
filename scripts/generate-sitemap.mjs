@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-const siteUrl = process.env.VITE_SITE_URL || 'https://ashcamcutting.com';
+const siteUrl = process.env.VITE_SITE_URL || 'https://ashcamcuttingsolution.ca';
 
 const routes = [
   '/',

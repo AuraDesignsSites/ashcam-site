@@ -100,7 +100,7 @@ const Gallery = () => {
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold mb-4">See Our Tools in Action</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Watch our T.C.T cutting blades perform in real-world applications. Experience the precision and quality that sets AshCam apart.
+              Watch our T.C.T cutting blades perform in real-world applications. Experience the precision and quality that sets AshCam Cutting Solutions apart.
             </p>
           </div>
           

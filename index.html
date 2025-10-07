@@ -20,9 +20,9 @@
     <meta name="bingbot" content="index, follow" />
     
     <!-- Hreflang for Canadian market -->
-    <link rel="alternate" hreflang="en-ca" href="https://ashcamcutting.com/" />
-    <link rel="alternate" hreflang="en" href="https://ashcamcutting.com/" />
-    <link rel="alternate" hreflang="x-default" href="https://ashcamcutting.com/" />
+    <link rel="alternate" hreflang="en-ca" href="https://ashcamcuttingsolution.ca/" />
+    <link rel="alternate" hreflang="en" href="https://ashcamcuttingsolution.ca/" />
+    <link rel="alternate" hreflang="x-default" href="https://ashcamcuttingsolution.ca/" />
     
     <!-- Google Search Console Verification -->
     <!-- Replace with your actual verification code from Google Search Console -->
@@ -54,11 +54,71 @@
     <!-- PWA Manifest -->
     <link rel="manifest" href="/manifest.json" />
     
-    <!-- Note: Open Graph and Twitter meta tags are handled by React SEO components -->
+    <!-- Pre-rendered meta tags for better SEO -->
+    <meta property="og:title" content="AshCam Cutting Solutions — Industrial T.C.T Cutting Tools Toronto & GTA" />
+    <meta property="og:description" content="AshCam Cutting Solutions Ltd: Premium T.C.T blades and masonry cutting tools with fast delivery across Toronto and the GTA. Professional cutting solutions since 1964." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ashcamcuttingsolution.ca/" />
+    <meta property="og:image" content="https://ashcamcuttingsolution.ca/src/assets/ashcam-logoV2.png" />
+    <meta property="og:site_name" content="AshCam Cutting Solutions" />
+    <meta property="og:locale" content="en_CA" />
+    
+    <!-- Twitter Card meta tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="AshCam Cutting Solutions — Industrial T.C.T Cutting Tools Toronto & GTA" />
+    <meta name="twitter:description" content="AshCam Cutting Solutions Ltd: Premium T.C.T blades and masonry cutting tools with fast delivery across Toronto and the GTA. Professional cutting solutions since 1964." />
+    <meta name="twitter:image" content="https://ashcamcuttingsolution.ca/src/assets/ashcam-logoV2.png" />
+    
+    <!-- Pre-rendered structured data for better SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "AshCam Cutting Solutions Ltd",
+      "description": "Premium T.C.T blades and masonry cutting tools with fast delivery across Toronto and the GTA",
+      "url": "https://ashcamcuttingsolution.ca",
+      "logo": "https://ashcamcuttingsolution.ca/src/assets/ashcam-logoV2.png",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "385 Osler Street, Unit 510",
+        "addressLocality": "Toronto",
+        "addressRegion": "ON",
+        "postalCode": "M6N 0B2",
+        "addressCountry": "CA"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-647-519-2734",
+        "contactType": "customer service",
+        "email": "AshCam1964@yahoo.com"
+      },
+      "areaServed": ["Toronto", "Markham", "Richmond Hill", "Vaughan", "Mississauga", "Brampton", "GTA", "Peel Region", "York Region", "Durham Region", "Halton Region"],
+      "openingHours": "Mo-Su 07:00-22:00"
+    }
+    </script>
+    
+    <!-- Note: Additional route-specific meta tags are handled by React SEO components -->
   </head>
 
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Loading state for better SEO and UX -->
+      <div id="loading" style="display: flex; justify-content: center; align-items: center; min-height: 100vh; font-family: Inter, sans-serif;">
+        <div style="text-align: center;">
+          <h1 style="color: #ea580c; margin-bottom: 1rem;">AshCam Cutting Solutions</h1>
+          <p style="color: #666;">Loading professional cutting solutions...</p>
+        </div>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      // Hide loading state once React loads
+      window.addEventListener('load', function() {
+        const loading = document.getElementById('loading');
+        if (loading) {
+          loading.style.display = 'none';
+        }
+      });
+    </script>
   </body>
 </html>
