@@ -32,11 +32,11 @@ const About = () => {
               </div>
               
               <div className="prose prose-lg max-w-none text-center space-y-6">
+                    <p className="text-lg leading-relaxed text-foreground">
+                      Since 1964, AshCam Cutting Solutions Limited has been Toronto's premier supplier of premium-quality <Link to="/products" className="text-primary hover:underline">T.C.T (Tungsten Carbide Tipped) cutting blades and industrial cutting tools</Link>. With over 60 years of experience, we've established ourselves as the trusted partner for construction companies, contractors, and industrial operations across the Greater Toronto Area.
+                    </p>
                 <p className="text-lg leading-relaxed text-foreground">
-                  Since 1964, AshCam Cutting Solutions Limited has been Toronto's premier supplier of premium-quality T.C.T (Tungsten Carbide Tipped) cutting blades and industrial cutting tools. With over 60 years of experience, we've established ourselves as the trusted partner for construction companies, contractors, and industrial operations across the Greater Toronto Area.
-                </p>
-                <p className="text-lg leading-relaxed text-foreground">
-                  Our deep expertise spans concrete cutting, metal fabrication, woodworking, and specialized industrial applications. We understand the unique challenges of Toronto's construction seasons and provide solutions that deliver consistent performance in our demanding climate, from winter concrete work to summer high-volume projects.
+                  Our deep expertise spans concrete cutting, metal fabrication, woodworking, and specialized industrial applications. We understand the unique challenges of <Link to="/service-areas" className="text-primary hover:underline">Toronto's construction seasons</Link> and provide solutions that deliver consistent performance in our demanding climate, from winter concrete work to summer high-volume projects.
                 </p>
                 <p className="text-lg leading-relaxed text-foreground">
                   We pride ourselves on delivering solutions that not only meet but exceed our customers' expectations, sourcing only the best materials and testing every product to meet North American standards. Our commitment to local service and expert knowledge has made us the go-to choice for cutting tools across Toronto and the GTA.

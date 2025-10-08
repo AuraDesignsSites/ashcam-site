@@ -19,13 +19,13 @@ const Index = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <div className="space-y-4">
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+                <h1 className="text-4xl sm:text-5xl font-bold leading-tight">
                   AshCam Cutting Solutions
-                  <span className="text-primary block">Professional Cutting Solutions</span>
+                  <span className="text-primary block">Professional T.C.T Cutting Tools Toronto & GTA</span>
                 </h1>
                 <p className="text-xl text-muted-foreground max-w-lg">
-                  AshCam Cutting Solutions is the leading provider of high-quality industrial cutting tools and saw blades across <Link to="/service-areas" className="text-primary hover:underline">Toronto and the GTA</Link>. 
-                  Precision, reliability, and performance you can trust from our experienced team.
+                  AshCam Cutting Solutions is the leading provider of high-quality <Link to="/products" className="text-primary hover:underline">T.C.T cutting blades and industrial tools</Link> across <Link to="/service-areas" className="text-primary hover:underline">Toronto and the GTA</Link>. 
+                  Precision, reliability, and performance you can trust from our experienced team since 1964.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">

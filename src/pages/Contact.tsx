@@ -100,7 +100,8 @@ const Contact = () => {
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <h1 className="text-4xl sm:text-5xl font-bold">Contact AshCam Cutting Solutions</h1>
             <p className="text-xl text-muted-foreground">
-              Get in touch with our cutting solutions experts. We're here to help with your project requirements across <Link to="/service-areas" className="text-primary hover:underline">Toronto and the GTA</Link>.
+              Get in touch with our cutting solutions experts. We're here to help with your project requirements across <Link to="/service-areas" className="text-primary hover:underline">Toronto and the GTA</Link>. 
+              Browse our <Link to="/products" className="text-primary hover:underline">T.C.T cutting blades</Link> or check our <Link to="/faq" className="text-primary hover:underline">FAQ section</Link> for quick answers.
             </p>
           </div>
         </div>

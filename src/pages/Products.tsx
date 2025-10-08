@@ -125,7 +125,8 @@ const Products = () => {
               <h1 className="text-4xl sm:text-5xl font-bold">AshCam Cutting Solutions Products</h1>
               <p className="text-xl text-muted-foreground">
                 Professional tungsten carbide tipped cutting blades engineered for precision, 
-                performance, and durability in cutting concrete, masonry, metal, and tile applications across <Link to="/service-areas" className="text-primary hover:underline">Toronto & GTA</Link>.
+                performance, and durability in cutting concrete, masonry, metal, and tile applications across <Link to="/service-areas" className="text-primary hover:underline">Toronto & GTA</Link>. 
+                See our <Link to="/gallery" className="text-primary hover:underline">cutting blades in action</Link> or get answers to <Link to="/faq" className="text-primary hover:underline">frequently asked questions</Link>.
               </p>
               <Button asChild variant="hero" size="lg" className="group">
                 <Link to="/contact">
