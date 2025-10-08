@@ -110,16 +110,6 @@ const Products = () => {
       <Seo
         title="T.C.T Cutting Blades — Toronto & GTA | AshCam"
         description="Professional T.C.T cutting blades for concrete, masonry, metal, and tile cutting across Toronto, Vaughan, Markham, and GTA. Order now!"
-        keywords={[
-          "T.C.T cutting blades Toronto",
-          "concrete saw blades GTA", 
-          "metal cutting tools Vaughan",
-          "T.C.T blades Markham",
-          "cutting discs Richmond Hill",
-          "steel cutting blades",
-          "aluminum cutting tools",
-          "tile cutting blades"
-        ]}
         canonical="/products"
         structuredData={[...productSchemas, serviceLd()]}
         breadcrumbs={[

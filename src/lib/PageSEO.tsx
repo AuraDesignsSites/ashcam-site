@@ -5,7 +5,6 @@ interface PageSEOProps {
   page: 'home' | 'about' | 'products' | 'gallery' | 'contact' | 'service-areas' | 'not-found';
   customTitle?: string;
   customDescription?: string;
-  keywords?: string[];
   canonical?: string;
   structuredData?: any[];
   breadcrumbs?: Array<{name: string, url: string}>;
@@ -33,71 +32,18 @@ const PAGE_DESCRIPTIONS = {
   'not-found': "The page you're looking for doesn't exist. Return to AshCam Cutting Solutions for premium T.C.T cutting tools across Toronto & GTA."
 };
 
-// Target keywords for each page
-const PAGE_KEYWORDS = {
-  home: [
-    "AshCam Cutting Solutions",
-    "T.C.T blades Toronto",
-    "cutting tools GTA",
-    "concrete saw blades Toronto",
-    "masonry blades GTA",
-    "industrial cutting tools Toronto"
-  ],
-  about: [
-    "AshCam Cutting Solutions about",
-    "Toronto industrial tools company",
-    "T.C.T blades manufacturer Toronto",
-    "cutting tools supplier GTA",
-    "AshCam company history"
-  ],
-  products: [
-    "T.C.T cutting blades Toronto",
-    "concrete saw blades GTA",
-    "metal cutting tools Vaughan",
-    "T.C.T blades Markham",
-    "cutting discs Richmond Hill",
-    "steel cutting blades"
-  ],
-  gallery: [
-    "AshCam product gallery",
-    "T.C.T blades photos Toronto",
-    "cutting tools images GTA",
-    "industrial tools gallery",
-    "saw blades pictures"
-  ],
-  contact: [
-    "contact AshCam Cutting Solutions",
-    "AshCam Cutting Solutions contact",
-    "contact cutting tools Toronto",
-    "quote T.C.T blades GTA",
-    "Toronto industrial tools supplier"
-  ],
-  'service-areas': [
-    "AshCam Cutting Solutions service areas",
-    "AshCam Cutting Solutions Toronto",
-    "AshCam Cutting Solutions GTA",
-    "Toronto T.C.T blades",
-    "GTA cutting tools"
-  ],
-  'not-found': [
-    "AshCam Cutting Solutions",
-    "T.C.T cutting tools Toronto",
-    "cutting blades GTA"
-  ]
-};
+// Keywords removed - not used for ranking and can be considered spammy
 
 export function PageSEO({ 
   page, 
   customTitle, 
   customDescription, 
-  keywords, 
   canonical, 
   structuredData = [], 
   breadcrumbs = [] 
 }: PageSEOProps) {
   const title = customTitle || PAGE_TITLES[page];
   const description = customDescription || PAGE_DESCRIPTIONS[page];
-  const pageKeywords = keywords || PAGE_KEYWORDS[page];
 
   // Validate title length
   if (title.length > 60) {
@@ -113,7 +59,6 @@ export function PageSEO({
     <Seo
       title={title}
       description={description}
-      keywords={pageKeywords}
       canonical={canonical || (page === 'home' ? '/' : `/${page}`)}
       structuredData={structuredData}
       breadcrumbs={breadcrumbs}

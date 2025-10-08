@@ -5,7 +5,6 @@ import { serviceLd, reviewLd } from './StructuredData';
 export interface SeoProps {
   title: string;
   description: string;
-  keywords?: string[];
   canonical?: string;
   ogImage?: string;
   ogType?: string;
@@ -17,7 +16,6 @@ export interface SeoProps {
 export function Seo({
   title,
   description,
-  keywords,
   canonical,
   ogImage,
   ogType = "website",
@@ -30,8 +28,7 @@ export function Seo({
   const canonicalUrl = canonical ? `${siteUrl}${canonical.startsWith('/') ? canonical : `/${canonical}`}` : siteUrl;
   const ogImageUrl = ogImage ? `${siteUrl}${ogImage}` : `${siteUrl}/src/assets/ashcam-logoV2.png`;
 
-  // Limit keywords to 12 items max
-  const limitedKeywords = keywords ? keywords.slice(0, 12) : [];
+  // Keywords removed - not used for ranking and can be considered spammy
 
   // Generate breadcrumb structured data
   const breadcrumbLd = breadcrumbs.length > 0 ? {
@@ -54,9 +51,6 @@ export function Seo({
     <>
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
-      {limitedKeywords.length > 0 && (
-        <meta name="keywords" content={limitedKeywords.join(", ")} />
-      )}
       <link rel="canonical" href={canonicalUrl} />
       
       {/* Open Graph */}
@@ -101,14 +95,6 @@ export function HomeSeo() {
     <Seo
       title="AshCam Cutting Solutions — T.C.T Blades Toronto & GTA"
       description="Premium T.C.T blades and cutting tools with fast delivery across Toronto and the GTA. Professional cutting solutions since 1964. Get a quote today!"
-      keywords={[
-        "AshCam Cutting Solutions",
-        "T.C.T blades Toronto",
-        "cutting tools GTA",
-        "concrete saw blades Toronto",
-        "masonry blades GTA",
-        "industrial cutting tools Toronto"
-      ]}
       canonical="/"
       structuredData={[organizationLd(), localBusinessLd(), faqLd(), reviewLd()]}
     />
@@ -120,13 +106,6 @@ export function ContactSeo() {
     <Seo
       title="Contact AshCam Cutting Solutions — Toronto T.C.T Tools"
       description="Contact AshCam Cutting Solutions for quotes and technical advice. Serving Toronto, Vaughan, Markham, and the GTA. Call us today!"
-      keywords={[
-        "contact AshCam Cutting Solutions",
-        "AshCam Cutting Solutions contact",
-        "contact cutting tools Toronto",
-        "quote T.C.T blades GTA",
-        "Toronto industrial tools supplier"
-      ]}
       canonical="/contact"
     />
   );
@@ -137,13 +116,6 @@ export function ServiceAreasSeo() {
     <Seo
       title="Service Areas — AshCam T.C.T Tools Toronto & GTA"
       description="AshCam Cutting Solutions delivery and expert support across Toronto, Vaughan, Markham, and the GTA. Fast local delivery available."
-      keywords={[
-        "AshCam Cutting Solutions service areas",
-        "AshCam Cutting Solutions Toronto",
-        "AshCam Cutting Solutions GTA",
-        "Toronto T.C.T blades",
-        "GTA cutting tools"
-      ]}
       canonical="/service-areas"
       structuredData={[serviceLd()]}
     />
@@ -155,13 +127,6 @@ export function AboutSeo() {
     <Seo
       title="About AshCam Cutting Solutions — Toronto T.C.T Tools"
       description="Learn about AshCam Cutting Solutions Ltd, Toronto's trusted supplier of premium T.C.T cutting blades and industrial tools. Contact us for expert advice."
-      keywords={[
-        "AshCam Cutting Solutions about",
-        "Toronto industrial tools company",
-        "T.C.T blades manufacturer Toronto",
-        "cutting tools supplier GTA",
-        "AshCam company history"
-      ]}
       canonical="/about"
       structuredData={[organizationLd()]}
       breadcrumbs={[
@@ -177,13 +142,6 @@ export function GallerySeo() {
     <Seo
       title="T.C.T Blades Gallery — AshCam Cutting Solutions Toronto"
       description="View our premium T.C.T cutting blades in action. Professional cutting tools for concrete, masonry, metal, and tile applications. See our products!"
-      keywords={[
-        "AshCam product gallery",
-        "T.C.T blades photos Toronto",
-        "cutting tools images GTA",
-        "industrial tools gallery",
-        "saw blades pictures"
-      ]}
       canonical="/gallery"
       breadcrumbs={[
         { name: "Home", url: "/" },
@@ -198,13 +156,6 @@ export function FAQSeo() {
     <Seo
       title="FAQ — AshCam Cutting Solutions Toronto T.C.T Tools"
       description="Frequently asked questions about AshCam's T.C.T cutting blades, delivery across Toronto & GTA, pricing, and industrial cutting solutions. Get expert answers."
-      keywords={[
-        "AshCam Cutting Solutions FAQ",
-        "T.C.T blades questions Toronto",
-        "cutting tools FAQ GTA",
-        "AshCam frequently asked questions",
-        "Toronto cutting tools help"
-      ]}
       canonical="/faq"
       structuredData={[organizationLd(), faqLd()]}
       breadcrumbs={[
