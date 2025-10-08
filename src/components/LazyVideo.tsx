@@ -151,35 +151,37 @@ const LazyVideo = ({
 
       {/* Video Controls Overlay */}
       {isLoaded && (
-        <div className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${
+        <div className={`absolute inset-0 transition-opacity duration-300 ${
           showControls || !isPlaying ? 'opacity-100' : 'opacity-0'
         }`}>
-          <div className="absolute inset-0 bg-black/20 rounded-lg" />
+          <div className="absolute inset-0 bg-black/20 rounded-lg pointer-events-none" />
           
-          {/* Play/Pause Button */}
-          <Button
-            variant="ghost"
-            size="icon"
-            className="h-16 w-16 bg-black/50 hover:bg-black/70 text-white hover:text-white rounded-full"
-            onClick={(e) => {
-              e.stopPropagation();
-              togglePlay();
-            }}
-          >
-            {isPlaying ? (
-              <Pause className="h-8 w-8" />
-            ) : (
-              <Play className="h-8 w-8 ml-1" />
-            )}
-          </Button>
+          {/* Play/Pause Button - Center */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="h-16 w-16 bg-black/50 hover:bg-black/70 text-white hover:text-white rounded-full z-10 relative transition-all duration-200 hover:scale-105"
+              onClick={(e) => {
+                e.stopPropagation();
+                togglePlay();
+              }}
+            >
+              {isPlaying ? (
+                <Pause className="h-8 w-8" />
+              ) : (
+                <Play className="h-8 w-8 ml-1" />
+              )}
+            </Button>
+          </div>
 
           {/* Bottom Controls */}
-          <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
+          <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between z-10 pointer-events-auto">
             <div className="flex items-center space-x-2">
               <Button
                 variant="ghost"
                 size="icon"
-                className="h-8 w-8 bg-black/50 hover:bg-black/70 text-white hover:text-white rounded-full"
+                className="h-8 w-8 bg-black/50 hover:bg-black/70 text-white hover:text-white rounded-full transition-all duration-200"
                 onClick={(e) => {
                   e.stopPropagation();
                   toggleMute();
@@ -195,7 +197,7 @@ const LazyVideo = ({
               <Button
                 variant="ghost"
                 size="icon"
-                className="h-8 w-8 bg-black/50 hover:bg-black/70 text-white hover:text-white rounded-full"
+                className="h-8 w-8 bg-black/50 hover:bg-black/70 text-white hover:text-white rounded-full transition-all duration-200"
                 onClick={(e) => {
                   e.stopPropagation();
                   toggleFullscreen();
@@ -205,8 +207,8 @@ const LazyVideo = ({
               </Button>
             </div>
 
-            <div className="bg-black/50 backdrop-blur-sm rounded-lg px-3 py-1">
-              <span className="text-white font-semibold text-sm">{title}</span>
+            <div className="bg-black/50 backdrop-blur-sm rounded-lg px-3 py-1 pointer-events-none max-w-[60%]">
+              <span className="text-white font-semibold text-sm truncate block">{title}</span>
             </div>
           </div>
         </div>
