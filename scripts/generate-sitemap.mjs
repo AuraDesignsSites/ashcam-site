@@ -14,13 +14,14 @@ const routes = [
 ];
 
 const generateSitemap = () => {
-  const currentDate = new Date().toISOString().split('T')[0];
+  // Use a fixed valid date to avoid future date issues
+  const finalDate = '2024-12-19';
   
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${routes.map(route => `  <url>
     <loc>${siteUrl}${route.path}</loc>
-    <lastmod>${currentDate}</lastmod>
+    <lastmod>${finalDate}</lastmod>
     <changefreq>${route.changefreq}</changefreq>
     <priority>${route.priority}</priority>
   </url>`).join('\n')}
