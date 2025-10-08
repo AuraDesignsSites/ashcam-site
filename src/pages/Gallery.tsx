@@ -29,49 +29,73 @@ const Gallery = () => {
   const productImages = [
     {
       title: "Professional Work Environment",
+      description: "Our team working with precision T.C.T cutting blades in Toronto construction environments",
+      category: "Work Environment",
       image: stockPhoto1
     },
     {
       title: "Industrial Cutting Operations",
+      description: "Heavy-duty cutting operations using our high-performance T.C.T blades for steel and concrete",
+      category: "Industrial Operations",
       image: stockPhoto2
     },
     {
       title: "High-Quality Results",
+      description: "Clean, precise cuts achieved with our professional-grade T.C.T cutting tools",
+      category: "Quality Results",
       image: stockPhoto3
     },
     {
       title: "Concrete Cutting Excellence",
+      description: "Specialized concrete cutting applications across Toronto construction sites",
+      category: "Concrete Cutting",
       image: stockPhoto4
     },
     {
       title: "Advanced Cutting Technology",
+      description: "State-of-the-art T.C.T blade technology for maximum efficiency and durability",
+      category: "Technology",
       image: stockPhoto5
     },
     {
       title: "Precision Engineering",
+      description: "Engineered for precision cutting across metals, aluminum, and wood applications",
+      category: "Engineering",
       image: stockPhoto6
     },
     {
       title: "6½ Inch T.C.T Blade",
+      description: "Compact 6½ inch T.C.T blade perfect for detailed cutting work and tight spaces",
+      category: "Product Showcase",
       image: sixAndHalfBlade
     },
     {
       title: "7¼ Inch T.C.T Blade", 
+      description: "Versatile 7¼ inch T.C.T blade ideal for general construction and renovation projects",
+      category: "Product Showcase",
       image: sevenAndQuarterBlade
     },
     {
       title: "14 Inch T.C.T Blade",
+      description: "Heavy-duty 14 inch T.C.T blade for large-scale industrial cutting operations",
+      category: "Product Showcase",
       image: fourteenInchBlade
     },
     {
       title: "Professional T.C.T Blade Collection",
+      description: "Complete range of T.C.T cutting blades for all construction and industrial needs",
+      category: "Product Collection",
       image: stockBlade1
     },
     {
       title: "High-Quality Cutting Blade",
+      description: "Premium T.C.T blade construction ensuring long-lasting performance and clean cuts",
+      category: "Quality Focus",
       image: stockBlade2
     }
   ];
+
+  // Remove categorization to maintain clean 3x3 grid
 
   return (
     <Layout>
@@ -180,17 +204,19 @@ const Gallery = () => {
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4">Our T.C.T Cutting Blades</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              High-quality T.C.T cutting blades designed for metals, aluminum, wood, and various cutting applications.
+            <h2 className="text-3xl font-bold mb-4">Our T.C.T Cutting Blades in Action</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Explore our comprehensive collection of T.C.T cutting blades through real-world applications, 
+              product showcases, and quality results across Toronto construction sites and industrial operations.
             </p>
           </div>
           
+          {/* Clean 3x3 Gallery Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {productImages.map((product, index) => (
               <div 
                 key={index} 
-                className="group relative overflow-hidden rounded-lg border border-border hover-lift cursor-pointer"
+                className="group relative overflow-hidden rounded-lg border border-border hover-lift cursor-pointer bg-background"
                 onClick={() => {
                   setSelectedImage(product);
                 }}
@@ -203,6 +229,10 @@ const Gallery = () => {
                   width={400}
                   height={256}
                 />
+                <div className="p-4">
+                  <h4 className="font-semibold mb-2 text-foreground">{product.title}</h4>
+                  <p className="text-sm text-muted-foreground line-clamp-2">{product.description}</p>
+                </div>
               </div>
             ))}
           </div>

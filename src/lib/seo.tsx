@@ -192,3 +192,25 @@ export function GallerySeo() {
     />
   );
 }
+
+export function FAQSeo() {
+  return (
+    <Seo
+      title="FAQ — AshCam Cutting Solutions Toronto T.C.T Tools"
+      description="Frequently asked questions about AshCam's T.C.T cutting blades, delivery across Toronto & GTA, pricing, and industrial cutting solutions. Get expert answers."
+      keywords={[
+        "AshCam Cutting Solutions FAQ",
+        "T.C.T blades questions Toronto",
+        "cutting tools FAQ GTA",
+        "AshCam frequently asked questions",
+        "Toronto cutting tools help"
+      ]}
+      canonical="/faq"
+      structuredData={[organizationLd(), faqLd()]}
+      breadcrumbs={[
+        { name: "Home", url: "/" },
+        { name: "FAQ", url: "/faq" }
+      ]}
+    />
+  );
+}

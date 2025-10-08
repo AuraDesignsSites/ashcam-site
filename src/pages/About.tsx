@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Target, Users, Trophy, ArrowRight } from "lucide-react";
 import Layout from "@/components/Layout";
 import { AboutSeo } from "@/lib/seo";
+import { getLastUpdatedDate, formatLastUpdated } from "@/lib/utils";
 
 const About = () => {
   return <Layout>
@@ -32,14 +33,39 @@ const About = () => {
               
               <div className="prose prose-lg max-w-none text-center space-y-6">
                 <p className="text-lg leading-relaxed text-foreground">
-                  AshCam Cutting Solutions Limited is a trusted supplier of premium-quality cutting blades and tools designed for professionals in construction, woodworking, metalworking, and beyond. We focus on delivering durable, high-performance products that meet the demands of both small contractors and large-scale operations.
+                  Since 1964, AshCam Cutting Solutions Limited has been Toronto's premier supplier of premium-quality T.C.T (Tungsten Carbide Tipped) cutting blades and industrial cutting tools. With over 60 years of experience, we've established ourselves as the trusted partner for construction companies, contractors, and industrial operations across the Greater Toronto Area.
                 </p>
                 <p className="text-lg leading-relaxed text-foreground">
-                  With precision, reliability, and value at the core of our business, AshCam ensures every cut is clean, efficient, and built to last. Our commitment to excellence has made us a trusted partner for businesses across various sectors, from woodworking and construction to manufacturing and engineering.
+                  Our deep expertise spans concrete cutting, metal fabrication, woodworking, and specialized industrial applications. We understand the unique challenges of Toronto's construction seasons and provide solutions that deliver consistent performance in our demanding climate, from winter concrete work to summer high-volume projects.
                 </p>
                 <p className="text-lg leading-relaxed text-foreground">
-                  We pride ourselves on delivering solutions that not only meet but exceed our customers' expectations, sourcing only the best materials and testing every product to meet North American standards.
+                  We pride ourselves on delivering solutions that not only meet but exceed our customers' expectations, sourcing only the best materials and testing every product to meet North American standards. Our commitment to local service and expert knowledge has made us the go-to choice for cutting tools across Toronto and the GTA.
                 </p>
+              </div>
+              
+              {/* Expertise Areas */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
+                <div className="bg-background/50 p-4 rounded-lg border border-primary/20">
+                  <h3 className="font-semibold text-primary mb-2">Concrete Cutting</h3>
+                  <p className="text-sm text-muted-foreground">Specialized expertise in concrete sawing, demolition, and precision cutting for Toronto construction projects.</p>
+                </div>
+                <div className="bg-background/50 p-4 rounded-lg border border-primary/20">
+                  <h3 className="font-semibold text-primary mb-2">Metal Fabrication</h3>
+                  <p className="text-sm text-muted-foreground">High-performance T.C.T blades for steel, aluminum, and metal cutting applications across the GTA.</p>
+                </div>
+                <div className="bg-background/50 p-4 rounded-lg border border-primary/20">
+                  <h3 className="font-semibold text-primary mb-2">Industrial Solutions</h3>
+                  <p className="text-sm text-muted-foreground">Custom cutting solutions for large-scale industrial operations and specialized manufacturing needs.</p>
+                </div>
+                <div className="bg-background/50 p-4 rounded-lg border border-primary/20">
+                  <h3 className="font-semibold text-primary mb-2">Local Expertise</h3>
+                  <p className="text-sm text-muted-foreground">Deep understanding of Toronto construction seasons, regulations, and project timelines.</p>
+                </div>
+              </div>
+              
+              {/* Last Updated */}
+              <div className="text-center mt-8 pt-6 border-t border-primary/20">
+                <p className="text-sm text-muted-foreground">{formatLastUpdated(getLastUpdatedDate())}</p>
               </div>
             </div>
           </div>

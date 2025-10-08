@@ -41,6 +41,7 @@ const Footer = () => {
                 { name: "About Us", href: "/about" },
                 { name: "Products", href: "/products" },
                 { name: "Gallery", href: "/gallery" },
+                { name: "FAQ", href: "/faq" },
                 { name: "Service Areas", href: "/service-areas" },
                 { name: "Contact", href: "/contact" },
               ].map((link) => (
