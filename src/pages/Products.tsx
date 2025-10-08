@@ -256,6 +256,8 @@ const Products = () => {
                                 alt={`${product.name} - ${product.size}`}
                                 className={`max-w-full max-h-full ${index === 2 ? 'object-contain' : 'object-cover'}`}
                                 placeholder="Loading product image..."
+                                width={300}
+                                height={200}
                               />
                             </div>
                             <div className="absolute top-4 right-4">
@@ -432,6 +434,8 @@ const Products = () => {
               src={zoomedImage.image} 
               alt={zoomedImage.title}
               className="max-w-full max-h-full object-contain"
+              width={800}
+              height={600}
             />
             <Button
               variant="ghost"

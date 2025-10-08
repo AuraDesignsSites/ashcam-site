@@ -200,6 +200,8 @@ const Gallery = () => {
                   alt={product.title}
                   className="w-full h-64 group-hover:scale-105 transition-transform duration-300"
                   placeholder="Loading image..."
+                  width={400}
+                  height={256}
                 />
               </div>
             ))}
@@ -240,6 +242,8 @@ const Gallery = () => {
               src={selectedImage.image} 
               alt={selectedImage.title}
               className="max-w-full max-h-full object-contain"
+              width={800}
+              height={600}
             />
             <>
               <Button

@@ -23,15 +23,23 @@ export default defineConfig(({ mode }) => ({
     assetsDir: "assets",
     sourcemap: false,
     minify: "esbuild",
+    target: "es2020", // Better performance for modern browsers
     rollupOptions: {
       output: {
         manualChunks: {
           vendor: ["react", "react-dom"],
           router: ["react-router-dom"],
-          ui: ["@radix-ui/react-slot", "@radix-ui/react-toast", "@radix-ui/react-tooltip"]
-        }
+          ui: ["@radix-ui/react-slot", "@radix-ui/react-toast", "@radix-ui/react-tooltip", "@radix-ui/react-label"],
+          icons: ["lucide-react"]
+        },
+        // Optimize chunk naming for better caching
+        chunkFileNames: "assets/[name]-[hash].js",
+        entryFileNames: "assets/[name]-[hash].js",
+        assetFileNames: "assets/[name]-[hash].[ext]"
       }
-    }
+    },
+    // Optimize chunk size warnings
+    chunkSizeWarningLimit: 1000
   },
   preview: {
     port: 8080,

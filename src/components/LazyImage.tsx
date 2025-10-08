@@ -18,6 +18,12 @@ const LazyImage = ({ src, alt, className = '', placeholder, onLoad, onClick, wid
   const imgRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // For priority images (LCP), load immediately
+    if (priority) {
+      setIsVisible(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -27,7 +33,7 @@ const LazyImage = ({ src, alt, className = '', placeholder, onLoad, onClick, wid
       },
       { 
         threshold: 0.1,
-        rootMargin: '50px' // Start loading 50px before image comes into view
+        rootMargin: '100px' // Start loading 100px before image comes into view for better UX
       }
     );
     
@@ -36,7 +42,7 @@ const LazyImage = ({ src, alt, className = '', placeholder, onLoad, onClick, wid
     }
     
     return () => observer.disconnect();
-  }, []);
+  }, [priority]);
 
   const handleImageLoad = () => {
     setIsLoaded(true);
