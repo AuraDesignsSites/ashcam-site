@@ -1,5 +1,6 @@
 import React from 'react';
 import { organizationLd, localBusinessLd, faqLd } from './orgData';
+import { serviceLd, reviewLd } from './StructuredData';
 
 export interface SeoProps {
   title: string;
@@ -109,7 +110,7 @@ export function HomeSeo() {
         "industrial cutting tools Toronto"
       ]}
       canonical="/"
-      structuredData={[organizationLd(), localBusinessLd(), faqLd()]}
+      structuredData={[organizationLd(), localBusinessLd(), faqLd(), reviewLd()]}
     />
   );
 }
@@ -144,6 +145,7 @@ export function ServiceAreasSeo() {
         "GTA cutting tools"
       ]}
       canonical="/service-areas"
+      structuredData={[serviceLd()]}
     />
   );
 }

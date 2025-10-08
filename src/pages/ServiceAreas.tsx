@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import ServiceAreas from "@/components/ServiceAreas";
 import { ServiceAreasSeo } from "@/lib/seo";
+import { serviceLd } from "@/lib/StructuredData";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, MapPin, Clock, Truck } from "lucide-react";
 

@@ -6,6 +6,7 @@ import { ArrowRight, CheckCircle, RotateCcw, X } from "lucide-react";
 import Layout from "@/components/Layout";
 import LazyImage from "@/components/LazyImage";
 import { Seo } from "@/lib/seo";
+import { productLd, serviceLd } from "@/lib/StructuredData";
 import { useState } from "react";
 import sawBlades from "@/assets/diamond-blade-collection.png";
 import sawBladeMetal from "@/assets/saw-blade-tct-metal.jpeg";
@@ -120,7 +121,7 @@ const Products = () => {
           "tile cutting blades"
         ]}
         canonical="/products"
-        structuredData={productSchemas}
+        structuredData={[...productSchemas, serviceLd()]}
         breadcrumbs={[
           { name: "Home", url: "/" },
           { name: "Products", url: "/products" }
