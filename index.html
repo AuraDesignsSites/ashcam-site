@@ -166,11 +166,32 @@
     <script type="module" src="/src/main.tsx"></script>
     <script>
       // Hide loading state once React loads
-      window.addEventListener('load', function() {
-        const loading = document.getElementById('loading');
-        if (loading) {
-          loading.style.display = 'none';
-        }
+      document.addEventListener('DOMContentLoaded', function() {
+        // Check if React has mounted
+        const checkReactMounted = () => {
+          const root = document.getElementById('root');
+          if (root && root.children.length > 1) {
+            // React has mounted, hide loading
+            const loading = document.getElementById('loading');
+            if (loading) {
+              loading.style.display = 'none';
+            }
+          } else {
+            // Check again in 100ms
+            setTimeout(checkReactMounted, 100);
+          }
+        };
+        
+        // Start checking after a short delay
+        setTimeout(checkReactMounted, 100);
+        
+        // Fallback: hide loading after 5 seconds regardless
+        setTimeout(() => {
+          const loading = document.getElementById('loading');
+          if (loading) {
+            loading.style.display = 'none';
+          }
+        }, 5000);
       });
     </script>
   </body>

@@ -15,6 +15,3 @@ Allow: /
 
 # Sitemap
 Sitemap: https://ashcamcuttingsolution.ca/sitemap.xml
-
-# Crawl-delay for respectful crawling
-Crawl-delay: 1

@@ -1,8 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, X, Play } from "lucide-react";
+import { ArrowRight, X } from "lucide-react";
 import Layout from "@/components/Layout";
 import LazyImage from "@/components/LazyImage";
+import LazyVideo from "@/components/LazyVideo";
 import { GallerySeo } from "@/lib/seo";
 import { useState } from "react";
 import sixAndHalfBlade from "@/assets/diamond-blade-6.5-inch.png";
@@ -22,8 +23,6 @@ import stockVideo2 from "@/assets/stock-video2.mov";
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<{ title: string; image: string } | null>(null);
-  const [video1Playing, setVideo1Playing] = useState(false);
-  const [video2Playing, setVideo2Playing] = useState(false);
 
   // Product gallery images - showcasing the actual T.C.T cutting blades
   const productImages = [
@@ -129,73 +128,19 @@ const Gallery = () => {
           </div>
           
           <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div className="relative group">
-              <video
-                src={stockVideo1}
-                className="w-full h-96 rounded-lg shadow-lg object-cover"
-                controls
-                preload="metadata"
-                poster=""
-                width={800}
-                height={384}
-                aria-label="T.C.T cutting blade demonstration video"
-                onPlay={() => setVideo1Playing(true)}
-                onPause={() => setVideo1Playing(false)}
-                onEnded={() => setVideo1Playing(false)}
-              >
-                Your browser does not support the video tag.
-              </video>
-              {!video1Playing && (
-                <div 
-                  className="absolute inset-0 flex items-center justify-center cursor-pointer"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    const video = e.currentTarget.parentElement?.querySelector('video') as HTMLVideoElement;
-                    if (video) {
-                      video.play();
-                    }
-                  }}
-                >
-                  <div className="bg-black/50 rounded-full p-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <Play className="h-8 w-8 text-white" />
-                  </div>
-                </div>
-              )}
-            </div>
+            <LazyVideo
+              src={stockVideo1}
+              title="T.C.T cutting blade demonstration video"
+              className="w-full h-96"
+              placeholder="Loading video..."
+            />
             
-            <div className="relative group">
-              <video
-                src={stockVideo2}
-                className="w-full h-96 rounded-lg shadow-lg object-cover"
-                controls
-                preload="metadata"
-                poster=""
-                width={800}
-                height={384}
-                aria-label="Professional cutting tools demonstration video"
-                onPlay={() => setVideo2Playing(true)}
-                onPause={() => setVideo2Playing(false)}
-                onEnded={() => setVideo2Playing(false)}
-              >
-                Your browser does not support the video tag.
-              </video>
-              {!video2Playing && (
-                <div 
-                  className="absolute inset-0 flex items-center justify-center cursor-pointer"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    const video = e.currentTarget.parentElement?.querySelector('video') as HTMLVideoElement;
-                    if (video) {
-                      video.play();
-                    }
-                  }}
-                >
-                  <div className="bg-black/50 rounded-full p-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <Play className="h-8 w-8 text-white" />
-                  </div>
-                </div>
-              )}
-            </div>
+            <LazyVideo
+              src={stockVideo2}
+              title="Professional cutting tools demonstration video"
+              className="w-full h-96"
+              placeholder="Loading video..."
+            />
           </div>
         </div>
       </section>
