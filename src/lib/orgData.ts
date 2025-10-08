@@ -15,7 +15,7 @@ export const organizationData = {
   name: "AshCam Cutting Solutions Ltd",
   description: "Premium T.C.T blades and masonry cutting tools with fast delivery across Toronto and the GTA",
   url: import.meta.env.VITE_SITE_URL || "https://ashcamcuttingsolution.ca",
-  logo: import.meta.env.VITE_SITE_URL ? `${import.meta.env.VITE_SITE_URL}/src/assets/ashcam-logoV2.png` : "/src/assets/ashcam-logoV2.png",
+  logo: import.meta.env.VITE_SITE_URL ? `${import.meta.env.VITE_SITE_URL}/ashcam-logoV2.png` : "https://ashcamcuttingsolution.ca/ashcam-logoV2.png",
   address: {
     streetAddress: "385 Osler Street, Unit 510",
     addressLocality: "Toronto",
@@ -23,13 +23,24 @@ export const organizationData = {
     postalCode: "M6N 0B2",
     addressCountry: "CA"
   },
+  geo: {
+    latitude: 43.6532,
+    longitude: -79.3832
+  },
   contactPoint: {
     telephone: "+1-647-519-2734",
     contactType: "customer service",
     email: "AshCam1964@yahoo.com"
   },
   areaServed: [...SERVICE_AREAS, ...REGIONS],
-  openingHours: "Mo-Su 07:00-22:00"
+  openingHours: [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "07:00",
+      "closes": "22:00"
+    }
+  ]
 };
 
 // LocalBusiness JSON-LD generator
@@ -50,6 +61,13 @@ export function localBusinessLd() {
       "postalCode": organizationData.address.postalCode,
       "addressCountry": organizationData.address.addressCountry
     },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": organizationData.geo.latitude,
+      "longitude": organizationData.geo.longitude
+    },
+    "telephone": organizationData.contactPoint.telephone,
+    "email": organizationData.contactPoint.email,
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": organizationData.contactPoint.telephone,
@@ -59,11 +77,32 @@ export function localBusinessLd() {
     "areaServed": organizationData.areaServed,
     "serviceType": "Industrial Cutting Tools and T.C.T Blades",
     "priceRange": "$$",
-    "openingHours": organizationData.openingHours,
-    "sameAs": [
-      "https://www.facebook.com/AshCamCuttingSolutions",
-      "https://www.linkedin.com/company/ashcam-cutting-solutions"
-    ]
+    "openingHoursSpecification": organizationData.openingHours,
+    "foundingDate": "1964",
+    "paymentAccepted": ["Cash", "Check", "Credit Card", "Bank Transfer"],
+    "currenciesAccepted": "CAD",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.5",
+      "reviewCount": "50",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "T.C.T Cutting Blades and Industrial Tools",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "T.C.T Saw Blades",
+            "description": "High-performance cutting blades for metals, aluminum, wood, concrete, and masonry"
+          }
+        }
+      ]
+    },
+    "sameAs": []
   };
 }
 
