@@ -26,7 +26,7 @@ export function Seo({
 }: SeoProps) {
   const siteUrl = import.meta.env.VITE_SITE_URL || "https://ashcamcuttingsolution.ca";
   const fullTitle = title.includes("AshCam") ? title : `${title} | AshCam Cutting Solutions`;
-  const canonicalUrl = canonical ? `${siteUrl}${canonical}` : siteUrl;
+  const canonicalUrl = canonical ? `${siteUrl}${canonical.startsWith('/') ? canonical : `/${canonical}`}` : siteUrl;
   const ogImageUrl = ogImage ? `${siteUrl}${ogImage}` : `${siteUrl}/src/assets/ashcam-logoV2.png`;
 
   // Limit keywords to 12 items max

@@ -114,7 +114,7 @@ export function PageSEO({
       title={title}
       description={description}
       keywords={pageKeywords}
-      canonical={canonical || `/${page === 'home' ? '' : page}`}
+      canonical={canonical || (page === 'home' ? '/' : `/${page}`)}
       structuredData={structuredData}
       breadcrumbs={breadcrumbs}
     />

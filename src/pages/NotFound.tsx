@@ -15,6 +15,7 @@ const NotFound = () => {
       <Seo
         title="Page Not Found — AshCam Cutting Solutions"
         description="The page you're looking for doesn't exist. Return to AshCam Cutting Solutions for premium T.C.T cutting tools across Toronto & GTA."
+        canonical="/404"
         noindex={true}
       />
       <div className="flex min-h-screen items-center justify-center bg-background">
