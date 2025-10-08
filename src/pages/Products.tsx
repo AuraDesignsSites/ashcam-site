@@ -209,7 +209,7 @@ const Products = () => {
                           </div>
                           
                           <div className="flex-1 min-h-0">
-                            <h4 className="font-medium mb-2">Key Features:</h4>
+                            <h3 className="font-medium mb-2">Key Features:</h3>
                             <ul className="space-y-1">
                               {product.features.map((feature, i) => (
                                 <li key={i} className="flex items-center text-sm text-muted-foreground">

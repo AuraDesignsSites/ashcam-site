@@ -18,6 +18,8 @@ const Contact = () => {
     company: "",
     message: ""
   });
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -27,20 +29,66 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const validateForm = () => {
+    const newErrors: Record<string, string> = {};
+    
+    if (!formData.name.trim()) {
+      newErrors.name = "Name is required";
+    }
+    
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Please enter a valid email address";
+    }
+    
+    if (formData.phone && !/^[\+]?[1-9][\d]{0,15}$/.test(formData.phone.replace(/[\s\-\(\)]/g, ''))) {
+      newErrors.phone = "Please enter a valid phone number";
+    }
+    
+    if (!formData.message.trim()) {
+      newErrors.message = "Message is required";
+    }
+    
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real application, this would send the data to a backend
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for your inquiry. We'll get back to you within 24 hours.",
-    });
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      company: "",
-      message: ""
-    });
+    
+    if (!validateForm()) {
+      return;
+    }
+    
+    setIsSubmitting(true);
+    
+    try {
+      // In a real application, this would send the data to a backend
+      await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate API call
+      
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for your inquiry. We'll get back to you within 24 hours.",
+      });
+      
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        company: "",
+        message: ""
+      });
+      setErrors({});
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "There was an error sending your message. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -67,12 +115,13 @@ const Contact = () => {
               <Card className="border border-border">
                 <CardHeader>
                   <CardTitle>Send us a Message</CardTitle>
-                  <p className="text-muted-foreground">
-                    Fill out the form below and we'll get back to you as soon as possible.
+                  <p className="text-muted-foreground" id="form-instructions">
+                    Fill out the form below and we'll get back to you as soon as possible. 
+                    Required fields are marked with an asterisk (*).
                   </p>
                 </CardHeader>
                 <CardContent className="space-y-6">
-                  <form onSubmit={handleSubmit} className="space-y-4">
+                  <form onSubmit={handleSubmit} className="space-y-4" noValidate>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <Label htmlFor="name">Full Name *</Label>
@@ -84,7 +133,14 @@ const Contact = () => {
                           value={formData.name}
                           onChange={handleInputChange}
                           placeholder="Your full name"
+                          aria-invalid={!!errors.name}
+                          aria-describedby={errors.name ? "name-error" : undefined}
                         />
+                        {errors.name && (
+                          <p id="name-error" className="text-sm text-destructive" role="alert">
+                            {errors.name}
+                          </p>
+                        )}
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="email">Email Address *</Label>
@@ -96,7 +152,14 @@ const Contact = () => {
                           value={formData.email}
                           onChange={handleInputChange}
                           placeholder="your.email@company.com"
+                          aria-invalid={!!errors.email}
+                          aria-describedby={errors.email ? "email-error" : undefined}
                         />
+                        {errors.email && (
+                          <p id="email-error" className="text-sm text-destructive" role="alert">
+                            {errors.email}
+                          </p>
+                        )}
                       </div>
                     </div>
                     
@@ -110,7 +173,14 @@ const Contact = () => {
                           value={formData.phone}
                           onChange={handleInputChange}
                           placeholder="+1 647-519-2734"
+                          aria-invalid={!!errors.phone}
+                          aria-describedby={errors.phone ? "phone-error" : undefined}
                         />
+                        {errors.phone && (
+                          <p id="phone-error" className="text-sm text-destructive" role="alert">
+                            {errors.phone}
+                          </p>
+                        )}
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="company">Company Name</Label>
@@ -135,11 +205,25 @@ const Contact = () => {
                         onChange={handleInputChange}
                         placeholder="Tell us about your cutting tool requirements, project details, or any questions you have..."
                         rows={6}
+                        aria-invalid={!!errors.message}
+                        aria-describedby={errors.message ? "message-error" : undefined}
                       />
+                      {errors.message && (
+                        <p id="message-error" className="text-sm text-destructive" role="alert">
+                          {errors.message}
+                        </p>
+                      )}
                     </div>
                     
-                    <Button type="submit" variant="hero" size="lg" className="w-full">
-                      Send Message
+                    <Button 
+                      type="submit" 
+                      variant="hero" 
+                      size="lg" 
+                      className="w-full"
+                      disabled={isSubmitting}
+                      aria-describedby="form-instructions"
+                    >
+                      {isSubmitting ? "Sending..." : "Send Message"}
                     </Button>
                   </form>
                 </CardContent>
@@ -193,6 +277,7 @@ const Contact = () => {
                             <a 
                               href={`mailto:${item.content}`}
                               className="text-foreground mb-1 hover:text-primary transition-colors block"
+                              aria-label={`Email us at ${item.content}`}
                             >
                               {item.content}
                             </a>
@@ -200,6 +285,7 @@ const Contact = () => {
                             <a 
                               href={`tel:${item.content}`}
                               className="text-foreground mb-1 hover:text-primary transition-colors block"
+                              aria-label={`Call us at ${item.content}`}
                             >
                               {item.content}
                             </a>

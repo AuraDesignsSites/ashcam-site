@@ -4,7 +4,7 @@ import ashcamLogo from "@/assets/ashcam-logoV2.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-warm-medium text-foreground border-t border-border">
+    <footer className="bg-warm-medium text-foreground border-t border-border" role="contentinfo">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Company Info */}
@@ -34,7 +34,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+            <h2 className="text-lg font-semibold mb-4">Quick Links</h2>
             <ul className="space-y-2">
               {[
                 { name: "Home", href: "/" },
@@ -58,13 +58,14 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Contact Info</h3>
+            <h2 className="text-lg font-semibold mb-4">Contact Info</h2>
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Phone className="h-4 w-4 text-primary" />
                 <a 
                   href="tel:+16475192734"
                   className="text-muted-foreground hover:text-primary transition-colors"
+                  aria-label="Call us at +1-647-519-2734"
                 >
                   +1 647-519-2734
                 </a>
@@ -74,6 +75,7 @@ const Footer = () => {
                 <a 
                   href="mailto:AshCam1964@yahoo.com"
                   className="text-muted-foreground hover:text-primary transition-colors"
+                  aria-label="Email us at AshCam1964@yahoo.com"
                 >
                   AshCam1964@yahoo.com
                 </a>

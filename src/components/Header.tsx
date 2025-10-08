@@ -20,7 +20,7 @@ const Header = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="sticky top-0 z-50 w-full header-background border-b border-gray-700">
+    <header className="sticky top-0 z-50 w-full header-background border-b border-gray-700" role="banner">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -36,7 +36,7 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex space-x-8" role="navigation" aria-label="Main navigation">
             {navigation.map((item) => (
               <Link
                 key={item.name}
@@ -64,6 +64,9 @@ const Header = () => {
               size="icon"
               className="md:hidden hover:bg-primary/20 hover:text-primary text-gray-300"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-navigation"
+              aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
             >
               {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>
@@ -72,8 +75,8 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 border-t border-border">
+          <div className="md:hidden" id="mobile-navigation">
+            <nav className="px-2 pt-2 pb-3 space-y-1 border-t border-border" role="navigation" aria-label="Mobile navigation">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
@@ -93,7 +96,7 @@ const Header = () => {
                   <Link to="/contact">Get a Quote</Link>
                 </Button>
               </div>
-            </div>
+            </nav>
           </div>
         )}
       </div>

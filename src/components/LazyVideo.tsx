@@ -206,7 +206,7 @@ const LazyVideo = ({
             </div>
 
             <div className="bg-black/50 backdrop-blur-sm rounded-lg px-3 py-1">
-              <h3 className="text-white font-semibold text-sm">{title}</h3>
+              <span className="text-white font-semibold text-sm">{title}</span>
             </div>
           </div>
         </div>
